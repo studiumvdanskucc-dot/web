@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "language": "cs",
+    "audience": ["Czech EU citizens", "Slovak EU citizens"],
+    "researchReviewedAt": "2026-07-14",
+    "editorialOwner": "[DOPLNIT]",
+    "contactEmail": "[DOPLNIT]"
+  },
+  "brand": {
+    "name": "[DOPLNIT: NÁZEV PROJEKTU]",
+    "shortName": "[DOPLNIT]",
+    "tagline": "Dánsko krok za krokem. Česky, upřímně a s oficiálními odkazy.",
+    "siteUrl": "[DOPLNIT]",
+    "independentNotice": "Jsme nezávislý informační projekt, ne dánský úřad, Optagelse.dk, SU ani univerzita.",
+    "legalOwner": "[DOPLNIT]"
+  },
+  "navigation": [
+    { "label": "Proč Dánsko", "href": "/proc-dansko" },
+    { "label": "Najdi program", "href": "/programy" },
+    { "label": "Jak se přihlásit", "href": "/jak-se-prihlasit" },
+    { "label": "Stěhování", "href": "/stehovani" },
+    { "label": "SU", "href": "/su" }
+  ],
+  "primaryCta": { "label": "Najít můj program", "href": "/programy" },
+  "people": [
+    {
+      "id": "tereza",
+      "name": "Tereza",
+      "role": "Zakladatelka",
+      "bio": "[DOPLNIT A SCHVÁLIT]",
+      "image": "[DOPLNIT]",
+      "publish": false
+    },
+    {
+      "id": "patrik",
+      "name": "Patrik",
+      "role": "[DOPLNIT]",
+      "bio": "[DOPLNIT A SCHVÁLIT]",
+      "image": "[DOPLNIT]",
+      "publish": false
+    },
+    {
+      "id": "hana",
+      "name": "Hana",
+      "role": "[DOPLNIT]",
+      "bio": "[DOPLNIT A SCHVÁLIT]",
+      "image": "[DOPLNIT]",
+      "publish": false
+    },
+    {
+      "id": "jakub",
+      "name": "Jakub",
+      "role": "[DOPLNIT]",
+      "bio": "[DOPLNIT A SCHVÁLIT]",
+      "image": "[DOPLNIT]",
+      "publish": false
+    }
+  ],
+  "facts": {
+    "tuitionEu": {
+      "value": "Danish public and most recognised higher-education institutions do not charge tuition to EU/EEA/Swiss students, subject to institution/programme status.",
+      "displayCs": "Pro občany EU/EEA/Švýcarska je studium na dánských veřejných a většině uznávaných vysokých škol zpravidla bez školného.",
+      "asOf": "2026-07-14",
+      "sourceId": "study-in-denmark-tuition",
+      "scope": "tuition",
+      "individualAssessment": true
+    },
+    "bachelorInternationalDeadline": {
+      "value": "15 March 12:00 CET",
+      "displayCs": "15. března ve 12:00 CET",
+      "asOf": "2026-07-14",
+      "sourceId": "study-in-denmark-apply",
+      "scope": "general deadline for applicants with a non-Danish upper-secondary qualification",
+      "individualAssessment": false
+    },
+    "bachelorPriorityDeadline": {
+      "value": "5 July 12:00 CET",
+      "displayCs": "5. července ve 12:00",
+      "asOf": "2026-07-14",
+      "sourceId": "study-in-denmark-apply",
+      "scope": "general priority/reordering and some annex activity; institution document deadlines may differ",
+      "individualAssessment": true
+    },
+    "bachelorDecisionDate": {
+      "value": "28 July",
+      "displayCs": "28. července",
+      "asOf": "2026-07-14",
+      "sourceId": "study-in-denmark-apply",
+      "scope": "usual coordinated admission decision date",
+      "individualAssessment": false
+    },
+    "bachelorMaxChoices": {
+      "value": 8,
+      "displayCs": "až 8 programů",
+      "asOf": "2026-07-14",
+      "sourceId": "study-in-denmark-apply",
+      "scope": "Optagelse.dk coordinated admissions",
+      "individualAssessment": false
+    },
+    "suMonthlyRate2026": {
+      "value": 7426,
+      "unit": "DKK/month before tax",
+      "displayCs": "7 426 DKK měsíčně před zdaněním",
+      "effectiveYear": 2026,
+      "asOf": "2026-07-14",
+      "sourceId": "su-rate-2026",
+      "scope": "higher-education student living away from parents",
+      "individualAssessment": true
+    },
+    "suWorkerHours": {
+      "value": { "min": 10, "max": 12, "unit": "paid hours per week" },
+      "displayCs": "obecně alespoň 10–12 placených hodin každý týden",
+      "asOf": "2026-07-14",
+      "sourceId": "su-eu-worker",
+      "scope": "general EU-worker rule; final requirement is individually assessed and stated in the decision",
+      "individualAssessment": true
+    },
+    "suContinuousWeeks": {
+      "value": 10,
+      "unit": "consecutive weeks",
+      "displayCs": "obvykle souvisle nejméně 10 týdnů",
+      "asOf": "2026-07-14",
+      "sourceId": "su-eu-worker",
+      "scope": "general worker-status duration expectation",
+      "individualAssessment": true
+    },
+    "suEqualStatusFormDeadline": {
+      "value": 3,
+      "unit": "weeks after SU application",
+      "displayCs": "do tří týdnů po žádosti o SU",
+      "asOf": "2026-07-14",
+      "sourceId": "su-how-to-apply",
+      "scope": "foreign-citizen equal-status form",
+      "individualAssessment": false
+    },
+    "suAnnualLastApplicationDate": {
+      "value": "5 December",
+      "displayCs": "5. prosince",
+      "asOf": "2026-07-14",
+      "sourceId": "su-how-to-apply",
+      "scope": "last application date in a calendar year",
+      "individualAssessment": false
+    },
+    "suIncomeAllowance2026": {
+      "value": 20749,
+      "unit": "DKK per SU month, before tax and after 8% AM contribution",
+      "displayCs": "20 749 DKK za měsíc se SU, před daní a po 8% labour-market contribution",
+      "effectiveYear": 2026,
+      "asOf": "2026-07-14",
+      "sourceId": "su-income-2026",
+      "scope": "lowest monthly allowance component for higher education; entitlement is calculated annually",
+      "individualAssessment": true
+    },
+    "danishCourseDepositCopenhagen": {
+      "value": 2000,
+      "unit": "DKK refundable deposit",
+      "displayCs": "vratný depozit 2 000 DKK",
+      "effectiveYear": 2026,
+      "asOf": "2026-07-14",
+      "sourceId": "copenhagen-danish-course",
+      "scope": "eligible residents referred to official Danish education in Copenhagen; rules apply",
+      "individualAssessment": true
+    },
+    "danishCourseDepositAarhus": {
+      "value": 2000,
+      "unit": "DKK refundable deposit",
+      "displayCs": "vratný depozit 2 000 DKK",
+      "effectiveYear": 2026,
+      "asOf": "2026-07-14",
+      "sourceId": "aarhus-danish-course",
+      "scope": "eligible residents in official Danish education in Aarhus; rules apply",
+      "individualAssessment": true
+    },
+    "housingMaximumUpfront": {
+      "value": {
+        "depositMonths": 3,
+        "prepaidRentMonths": 3,
+        "firstRentMonths": 1,
+        "maximumIllustrativeTotalMonths": 7
+      },
+      "displayCs": "až 3 nájmy depozit + až 3 nájmy předplacené + první nájem",
+      "asOf": "2026-07-14",
+      "sourceId": "copenhagen-renting-costs",
+      "scope": "maximum commonly described for a Danish flat lease; actual contract varies",
+      "individualAssessment": true
+    },
+    "studyInDenmarkMonthlyRent": {
+      "value": { "min": 3000, "max": 6500 },
+      "unit": "DKK/month",
+      "displayCs": "přibližně 3 000–6 500 DKK měsíčně",
+      "asOf": "2026-07-14",
+      "sourceId": "study-in-denmark-budget",
+      "scope": "rough general budget; Copenhagen and private rentals can be higher",
+      "individualAssessment": true
+    },
+    "studyInDenmarkMonthlyFood": {
+      "value": { "min": 2000, "max": 3500 },
+      "unit": "DKK/month",
+      "displayCs": "přibližně 2 000–3 500 DKK měsíčně",
+      "asOf": "2026-07-14",
+      "sourceId": "study-in-denmark-budget",
+      "scope": "rough general budget",
+      "individualAssessment": true
+    },
+    "sduHousingSeptemberDeadline2026": {
+      "value": "2026-05-01T23:59:00+02:00",
+      "displayCs": "1. května 2026 ve 23:59",
+      "asOf": "2026-07-14",
+      "sourceId": "sdu-odense-housing",
+      "scope": "eligible international students seeking September housing; re-check for later intakes",
+      "individualAssessment": true
+    },
+    "sduHousingFebruaryDeadline2026": {
+      "value": "2026-11-01T23:59:00+01:00",
+      "displayCs": "1. listopadu 2026 ve 23:59",
+      "asOf": "2026-07-14",
+      "sourceId": "sdu-odense-housing",
+      "scope": "eligible international students seeking February housing; re-check for later intakes",
+      "individualAssessment": true
+    },
+    "euStudentResidenceThreshold": {
+      "value": 3,
+      "unit": "months",
+      "displayCs": "při pobytu delším než tři měsíce",
+      "asOf": "2026-07-14",
+      "sourceId": "siri-eu-student",
+      "scope": "EU/EEA/Swiss student residence document",
+      "individualAssessment": true
+    }
+  },
+  "planningEstimates": {
+    "movingBuffersDkk": [
+      {
+        "id": "confirmed-student-housing-outside-copenhagen",
+        "labelCs": "Mimo Kodaň, potvrzené studentské bydlení a nižší depozit",
+        "min": 25000,
+        "max": 35000
+      },
+      {
+        "id": "safer-general",
+        "labelCs": "Bezpečnější obecný plán",
+        "min": 35000,
+        "max": 50000
+      },
+      {
+        "id": "copenhagen-private",
+        "labelCs": "Kodaň nebo soukromý pronájem s vysokou platbou dopředu",
+        "min": 45000,
+        "max": 75000,
+        "openEnded": true
+      }
+    ],
+    "noticeCs": "Jde o plánovací scénáře odvozené z publikovaných nákladů a pravidel plateb dopředu, ne o zákonné minimum ani záruku. Vždy dosaď přesná čísla z vlastní smlouvy."
+  },
+  "sources": {
+    "study-in-denmark-tuition": {
+      "title": "Study in Denmark — Tuition Fees",
+      "url": "https://studyindenmark.dk/study-options/tuition-fees-and-scholarships",
+      "authority": "Danish Ministry of Higher Education and Science"
+    },
+    "study-in-denmark-apply": {
+      "title": "Study in Denmark — How to apply",
+      "url": "https://studyindenmark.dk/study-options/how-to-apply",
+      "authority": "Danish Ministry of Higher Education and Science"
+    },
+    "study-in-denmark-programmes": {
+      "title": "Study in Denmark — Programmes",
+      "url": "https://studyindenmark.dk/portal",
+      "authority": "Danish Ministry of Higher Education and Science"
+    },
+    "su-eu-worker": {
+      "title": "SU — You work in Denmark",
+      "url": "https://www.su.dk/foreign-citizen/gb-foreign-citizen/eu-rules/you-work-in-denmark",
+      "authority": "Danish Agency for Higher Education and Science"
+    },
+    "su-how-to-apply": {
+      "title": "SU — Foreign citizen: how to apply",
+      "url": "https://www.su.dk/foreign-citizen/gb-foreign-citizen/foreign-citizen-how-to-apply",
+      "authority": "Danish Agency for Higher Education and Science"
+    },
+    "su-rate-2026": {
+      "title": "SU rates 2026 — higher education, living away from parents",
+      "url": "https://www.su.dk/satser/videregaaende-uddannelser-satser-for-su-til-udeboende",
+      "authority": "Danish Agency for Higher Education and Science"
+    },
+    "su-income-2026": {
+      "title": "SU — Rules regarding employment and private earnings",
+      "url": "https://www.su.dk/english/state-educational-grant-and-loan-scheme-su/rules-regarding-employment-and-private-earnings",
+      "authority": "Danish Agency for Higher Education and Science"
+    },
+    "su-reform-2027": {
+      "title": "SU reform in English",
+      "url": "https://www.su.dk/su-reform/su-reform-in-english",
+      "authority": "Danish Agency for Higher Education and Science"
+    },
+    "copenhagen-danish-course": {
+      "title": "City of Copenhagen — Danish Language Education Programme",
+      "url": "https://international.kk.dk/live/learn-danish/danish-language-courses/danish-language-education-programme",
+      "authority": "City of Copenhagen"
+    },
+    "aarhus-danish-course": {
+      "title": "Aarhus — Learn Danish for free",
+      "url": "https://international.aarhus.dk/live/learn-danish-for-free-the-official-danish-education",
+      "authority": "Aarhus Municipality"
+    },
+    "study-in-denmark-budget": {
+      "title": "Study in Denmark — Bank & Budget",
+      "url": "https://studyindenmark.dk/live-in-denmark/bank-budget",
+      "authority": "Danish Ministry of Higher Education and Science"
+    },
+    "copenhagen-renting-costs": {
+      "title": "City of Copenhagen — Average renting costs",
+      "url": "https://international.kk.dk/live/housing/finding-a-place-to-live/average-renting-costs",
+      "authority": "City of Copenhagen"
+    },
+    "sdu-odense-housing": {
+      "title": "SDU — Student housing in Odense",
+      "url": "https://www.sdu.dk/en/uddannelse/studenthousing/odense",
+      "authority": "University of Southern Denmark"
+    },
+    "siri-eu-student": {
+      "title": "SIRI — EU student residence",
+      "url": "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Residence-as-a-Nordic-citizen-or-EU-or-EEA-citizen/EU-student",
+      "authority": "Danish Agency for International Recruitment and Integration"
+    }
+  },
+  "buildRules": {
+    "blockProductionOnMandatoryPlaceholder": true,
+    "mandatoryPlaceholderFields": [
+      "brand.name",
+      "brand.shortName",
+      "brand.siteUrl",
+      "brand.legalOwner",
+      "meta.editorialOwner",
+      "meta.contactEmail"
+    ],
+    "hideUnpublishedPeople": true,
+    "programmeMatcherCanInventIds": false,
+    "showFactAsOf": true,
+    "showOfficialSource": true
+  }
+}
