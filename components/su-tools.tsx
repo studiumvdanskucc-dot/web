@@ -10,7 +10,7 @@ const applicationItems = [
   "Mám skutečnou placenou práci a smlouvu",
   "Uchovávám výplatní pásky a přesné rozpisy směn",
   "Podal/a jsem běžnou žádost v minSU",
-  "Do tří týdnů jsem dokončil/a žádost o equal status",
+  "Do tří týdnů jsem dokončil/a žádost o rovnocenné postavení (equal status)",
   "Uložil/a jsem potvrzení a přečetl/a své rozhodnutí",
 ];
 
@@ -46,21 +46,21 @@ export function SuTools() {
 
   return <>
     <section id="co-potrebuji" className="content-section shell">
-      <div className="tool-heading"><div><p className="eyebrow"><span /> Než otevřeš minSU</p><h2>Připrav podmínky, ne jen formulář.</h2></div><p>Typická worker cesta dává smysl teprve se skutečnou prací, CPR, MitID a aktivním zápisem. Odškrtni si, co už máš.</p></div>
+      <div className="tool-heading"><div><p className="eyebrow"><span /> Než otevřeš minSU</p><h2>Zkontroluj, zda máš vše připravené.</h2></div><p>Nejčastější cesta přes status pracovníka vyžaduje skutečnou práci, CPR, MitID a aktivní zápis ke studiu. Odškrtni si, co už máš.</p></div>
       <div className="su-checklist-layout">
         <div className="interactive-checklist su-checklist">{applicationItems.map((item, index) => <label key={item} className={done.includes(item) ? "checked" : ""}><input type="checkbox" checked={done.includes(item)} onChange={() => toggle(item)} /><span aria-hidden="true">✓</span><b>{String(index + 1).padStart(2, "0")}</b>{item}</label>)}</div>
-        <aside className="su-summary"><span>{done.length}/{applicationItems.length}</span><strong>připravených kroků</strong><p>Checklist je pomůcka, ne potvrzení nároku. Equal status posuzuje úřad individuálně.</p><a href="https://www.su.dk/foreign-citizen/gb-foreign-citizen/equal-status-according-to-eu-law/you-are-working-in-denmark" target="_blank" rel="noreferrer">Oficiální worker návod ↗</a></aside>
+        <aside className="su-summary"><span>{done.length}/{applicationItems.length}</span><strong>připravených kroků</strong><p>Kontrolní seznam je pouze pomůcka. Nárok na rovnocenné postavení posuzuje úřad individuálně.</p><a href="https://www.su.dk/foreign-citizen/gb-foreign-citizen/equal-status-according-to-eu-law/you-are-working-in-denmark" target="_blank" rel="noreferrer">Oficiální návod pro studenty z EU ↗</a></aside>
       </div>
     </section>
 
     <section id="hodiny" className="hours-section">
       <div className="shell">
-        <div className="tool-heading"><div><p className="eyebrow eyebrow-light"><span /> Týden po týdnu</p><h2>43 hodin za měsíc tě neochrání.</h2></div><p>Oficiální obecný rámec mluví o 10–12 hodinách týdně, obvykle souvisle nejméně 10 týdnů. Rozhodující je tvé konkrétní rozhodnutí.</p></div>
+        <div className="tool-heading"><div><p className="eyebrow eyebrow-light"><span /> Týden po týdnu</p><h2>Měsíční součet hodin nestačí.</h2></div><p>Obecné pravidlo uvádí 10–12 hodin týdně, obvykle souvisle nejméně 10 týdnů. Rozhodující jsou podmínky uvedené v tvém konkrétním rozhodnutí.</p></div>
         <div className="hours-tool">
           <div className="week-grid">{hours.map((value, index) => <label className={value < 10 ? "week-low" : ""} key={index}><span>Týden {index + 1}</span><input type="number" min="0" max="80" step="0.5" value={value} onChange={(event) => updateWeek(index, event.target.value)} /><small>hodin</small></label>)}</div>
           <div className={weakWeeks.length ? "hours-result hours-result-warning" : "hours-result hours-result-ok"}>
             <p>Celkem za 10 týdnů</p><strong>{total.toLocaleString("cs-CZ")} h</strong>
-            {weakWeeks.length ? <p><b>Zkontroluj týden {weakWeeks.join(", ")}.</b> Měsíční součet nemusí napravit slabý týden. Zrušenou směnu řeš hned se zaměstnavatelem a SU office.</p> : <p><b>V každém týdnu máš alespoň 10 hodin.</b> To stále není záruka nároku — úřad posuzuje mzdu, délku a skutečný charakter práce a může vyžadovat 10–12 hodin podle situace.</p>}
+            {weakWeeks.length ? <p><b>Zkontroluj týden {weakWeeks.join(", ")}.</b> Měsíční součet nemusí vyrovnat týden s malým počtem hodin. Zrušenou směnu řeš hned se zaměstnavatelem a školním SU oddělením.</p> : <p><b>V každém týdnu máš alespoň 10 hodin.</b> To stále není záruka nároku. Úřad posuzuje mzdu, délku a skutečný charakter práce a podle situace může vyžadovat 10–12 hodin týdně.</p>}
           </div>
         </div>
       </div>

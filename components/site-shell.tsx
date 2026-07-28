@@ -95,7 +95,7 @@ export function SiteFooter() {
           </div>
           <div>
             <h2>Projekt</h2>
-            <Link href="/#o-projektu">O nás</Link>
+            <Link href="/#o-projektu">O projektu</Link>
             <Link href="/zdroje">Zdroje a aktualizace</Link>
             <Link href="/ochrana-soukromi">Ochrana soukromí</Link>
           </div>

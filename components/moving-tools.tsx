@@ -20,27 +20,27 @@ type FieldKey = typeof fields[number]["key"];
 const cities = [
   {
     id: "copenhagen", name: "Kodaň", headline: "Největší výběr. Také největší konkurence.",
-    text: "Začni housing stránkou své školy. s.dk a KKIK sdružují mnoho kolejí a studentských možností; zvaž širší oblast a dojíždění.",
+    text: "Začni stránkou o bydlení na webu své školy. s.dk a KKIK sdružují mnoho kolejí a studentských možností. Počítej také s bydlením mimo centrum a dojížděním.",
     links: [{ label: "s.dk / mit.s.dk", href: "https://mit.s.dk" }, { label: "KKIK", href: "https://www.kollegierneskontor.dk" }, { label: "Housing guide UCPH", href: "https://www.ku.dk/studies/student-life/housing" }],
     note: "Orientační kodaňský nájem publikovaný UCPH je přibližně 4 000–10 000+ DKK měsíčně.",
   },
   {
     id: "aarhus", name: "Aarhus", headline: "Seniorita se počítá. Registruj se včas.",
-    text: "StudentHousingAarhus je hlavní studentský portál. Podle návodu AU lze registraci založit od 17 let bez admission document; přibližně tři měsíce před nastěhováním žádost aktivuj.",
+    text: "StudentHousingAarhus je hlavní portál pro studentské bydlení. Podle návodu AU se můžeš registrovat od 17 let i bez potvrzení o přijetí. Přibližně tři měsíce před nastěhováním žádost aktivuj.",
     links: [{ label: "StudentHousingAarhus", href: "https://studenthousingaarhus.com" }, { label: "Housing guide AU", href: "https://international.au.dk/life/locations/housing/auhousing/student-housing-aarhus" }],
-    note: "U některých jednotek může vstupní platba odpovídat zhruba 4–6 nájmům. Podmínky aktivního studenta ověř u nabídky.",
+    note: "U některých nabídek může počáteční platba odpovídat zhruba 4–6 nájmům. Podmínky pro studenty si ověř přímo u nabídky.",
   },
   {
     id: "odense", name: "Odense", headline: "SDU má vlastní proces a podmíněnou garanci.",
-    text: "Způsobilí zahraniční studenti mohou žádat přes SDU Housing. Aktuálně škola dovoluje žádost před finálním přijetím; garance platí jen při splnění podmínek a termínu.",
+    text: "Způsobilí zahraniční studenti mohou žádat přes SDU Housing. Škola umožňuje podat žádost ještě před konečným přijetím. Garance platí jen při splnění všech podmínek a termínu.",
     links: [{ label: "SDU Housing portal", href: "https://sduhousing.sdu.dk" }, { label: "Housing guide SDU", href: "https://www.sdu.dk/en/uddannelse/studenthousing/odense" }],
-    note: "Pro intake 2026 SDU uvádí 1. května 23:59 pro září a 1. listopadu pro únor. Pro další rok termín ověř znovu.",
+    note: "Pro nástup v roce 2026 SDU uvádí termín 1. května ve 23:59 pro září a 1. listopadu pro únor. Pro další rok si termín ověř znovu.",
   },
   {
     id: "aalborg", name: "Aalborg", headline: "Začni u AAU Accommodation Office.",
     text: "AAU nabízí mezinárodním studentům různé typy pokojů a bytů. Přesné ceny zkontroluj přímo v aktuální nabídce.",
     links: [{ label: "AAU Accommodation", href: "https://www.en.aau.dk/living-in-denmark/accommodation/international-students-in-aalborg" }],
-    note: "AAU uvádí, že se u tohoto housing procesu může nájem platit po třech měsících. Zohledni to v cash-flow.",
+    note: "AAU uvádí, že se u tohoto typu bydlení může nájem platit po třech měsících. Zahrň tuto částku do svého rozpočtu.",
   },
 ];
 
@@ -51,7 +51,7 @@ const arrivalItems = [
   "Bankovní účet a NemKonto",
   "Daňová karta",
   "Studentská práce",
-  "Žádost o SU a equal status, pokud splňuji podmínky",
+  "Žádost o SU a rovnocenné postavení (equal status), pokud splňuji podmínky",
 ];
 
 export function MovingTools() {
@@ -86,7 +86,7 @@ export function MovingTools() {
 
   return <>
     <section id="rozpocet" className="content-section shell">
-      <div className="tool-heading"><div><p className="eyebrow"><span /> Vlastní čísla</p><h2>Kolik potřebuji při příjezdu?</h2></div><p>10 000 DKK může stačit jen v mimořádně levné situaci. Zadej nájemní podmínky a počet měsíců, kdy nechceš být závislý/á na práci nebo SU.</p></div>
+      <div className="tool-heading"><div><p className="eyebrow"><span /> Vlastní čísla</p><h2>Kolik peněz potřebuji při příjezdu?</h2></div><p>Zadej nájemní podmínky a počet měsíců, na které si chceš připravit rezervu bez příjmu z práce nebo SU.</p></div>
       <div className="budget-tool">
         <div className="budget-fields">
           {fields.map((field) => <label key={field.key}>{field.label}<span><input type="number" min="0" step={field.key.includes("Months") || field.key === "months" ? "1" : "100"} value={values[field.key]} onChange={(event) => update(field.key, event.target.value)} />{field.key.includes("Months") || field.key === "months" ? "×" : "DKK"}</span></label>)}
@@ -106,7 +106,7 @@ export function MovingTools() {
 
     <section id="bydleni" className="housing-section">
       <div className="shell">
-        <div className="tool-heading"><div><p className="eyebrow eyebrow-light"><span /> Bydlení podle města</p><h2>Začni u školy. Potom rozšiř kruh.</h2></div><p>Každé město má jiný systém. Některé portály počítají senioritu a někde můžeš žádat ještě před finálním přijetím.</p></div>
+        <div className="tool-heading"><div><p className="eyebrow eyebrow-light"><span /> Bydlení podle města</p><h2>Začni u školy a potom hledej i jinde.</h2></div><p>Každé město má jiný systém. Některé portály zohledňují délku registrace a někde můžeš požádat ještě před konečným přijetím.</p></div>
         <div className="city-tabs" role="tablist" aria-label="Vyber město">{cities.map((item) => <button key={item.id} role="tab" aria-selected={activeCity === item.id} onClick={() => setActiveCity(item.id)}>{item.name}</button>)}</div>
         <article className="city-panel" role="tabpanel">
           <div><p className="eyebrow"><span /> {city.name}</p><h3>{city.headline}</h3><p>{city.text}</p><div className="portal-links">{city.links.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label} ↗</a>)}</div></div>

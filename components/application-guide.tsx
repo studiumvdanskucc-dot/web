@@ -9,8 +9,8 @@ const steps: Record<Path, Array<{ title: string; when: string; body: string; ite
     {
       title: "Vyber program a otevři požadavky školy",
       when: "Podzim – leden",
-      body: "Na webu programu najdi admission requirements pro uchazeče s nedánským středoškolským vzděláním. Zapiš si požadované předměty, úroveň angličtiny, intake a případné portfolio nebo přijímačky.",
-      items: ["Ověřil/a jsem, že program přijímá pro příští intake", "Uložil/a jsem si přímý odkaz na požadavky", "Rozumím požadovaným předmětům a angličtině"],
+      body: "Na webu programu najdi část Admission requirements neboli podmínky přijetí pro uchazeče se zahraničním středoškolským vzděláním. Zapiš si požadované předměty, úroveň angličtiny, termín nástupu a případné portfolio nebo přijímačky.",
+      items: ["Ověřil/a jsem, že program přijímá studenty v příštím termínu", "Uložil/a jsem si přímý odkaz na požadavky", "Rozumím požadovaným předmětům a angličtině"],
     },
     {
       title: "Připrav dokumenty",
@@ -23,20 +23,20 @@ const steps: Record<Path, Array<{ title: string; when: string; body: string; ite
       title: "Založ přihlášku na Optagelse.dk",
       when: "Po otevření portálu",
       body: "Otevři optagelse.dk, zvol angličtinu a přihlášení bez dánského MitID. Vyhledej program a přidej ho mezi priority. U jednoho programu zvol správný název školy, kampus a začátek studia.",
-      items: ["Kontaktní údaje jsou bez překlepů", "Vybral/a jsem správný kampus a intake", "Programy jsou seřazené podle skutečné preference"],
+      items: ["Kontaktní údaje jsou bez překlepů", "Vybral/a jsem správný kampus a termín nástupu", "Programy jsou seřazené podle skutečné preference"],
       warning: "Pořadí je důležité: můžeš dostat nabídku jen na nejvýše umístěnou prioritu, pro kterou splníš podmínky. Nedávej na první místo obor jen proto, že působí snáz.",
     },
     {
       title: "Nahraj přílohy ke správným programům",
       when: "Před odesláním",
-      body: "V části Attachments přidej každý dokument a zkontroluj, ke kterým prioritám se připojí. Škola musí soubor otevřít a pochopit bez hádání, co obsahuje.",
+      body: "V části Attachments (Přílohy) přidej každý dokument a zkontroluj, ke kterým prioritám se připojí. Škola musí každý soubor snadno otevřít a poznat, co obsahuje.",
       items: ["Každý soubor je čitelný a správně otočený", "Dokument je připojen ke všem relevantním prioritám", "Originál a překlad jsou jasně označené", "Po nahrání jsem soubor znovu otevřel/a"],
     },
     {
-      title: "Odešli a podepiš signature page",
+      title: "Odešli a podepiš podpisovou stránku",
       when: "Nejpozději 15. března ve 12:00 dánského času",
       body: "Uchazeč bez MitID obvykle po odeslání vytiskne podpisovou stránku pro každou přihlášku, podepíše ji a doručí podle instrukcí dané školy. Samotné kliknutí na odeslat nemusí přihlášku dokončit.",
-      items: ["Přihláška je odeslaná", "Signature page je podepsaná", "Poslal/a jsem ji přesně způsobem, který uvádí škola", "Mám potvrzení nebo kopii odeslání"],
+      items: ["Přihláška je odeslaná", "Podpisová stránka (signature page) je podepsaná", "Poslal/a jsem ji přesně způsobem, který uvádí škola", "Mám potvrzení nebo kopii odeslání"],
       warning: "Pro uchazeče s českým nebo slovenským středoškolským vzděláním je prakticky klíčový termín 15. března ve 12:00. Nespoléhej na termín 5. července určený pro jiné situace.",
     },
     {
@@ -50,21 +50,21 @@ const steps: Record<Path, Array<{ title: string; when: string; body: string; ite
     {
       title: "Najdi přihlášku na webu konkrétní univerzity",
       when: "Začni 9–12 měsíců předem",
-      body: "Magisterské programy nemají jeden společný portál ani společný termín. Každá univerzita používá vlastní systém a stanoví termín podle občanství, předchozího titulu a intake.",
-      items: ["Našel/a jsem oficiální stránku programu", "Zapsal/a jsem si deadline pro EU/EEA uchazeče", "Vím, v jakém portálu se podává přihláška"],
+      body: "Magisterské programy nemají jeden společný portál ani společný termín. Každá univerzita používá vlastní systém a stanoví termín podle občanství, předchozího titulu a data nástupu.",
+      items: ["Našel/a jsem oficiální stránku programu", "Zapsal/a jsem si termín pro uchazeče z EU/EEA", "Vím, v jakém portálu se podává přihláška"],
     },
     {
       title: "Porovnej svůj bakalářský obsah s požadavky",
       when: "Před objednáváním dokumentů",
-      body: "Nestačí podobný název oboru. Škola často počítá ECTS v konkrétních oblastech. Udělej si tabulku: požadovaná oblast, tvůj předmět, ECTS, krátký sylabus a odkaz na course description.",
-      items: ["Mám transcript of records", "Mám popisy relevantních předmětů", "Zkontroloval/a jsem požadované ECTS", "Vím, zda škola chce self-assessment form"],
-      warning: "Náš matcher ECTS shodu neposuzuje. O akademické způsobilosti rozhoduje výhradně univerzita.",
+      body: "Nestačí podobný název oboru. Škola často počítá ECTS v konkrétních oblastech. Udělej si tabulku: požadovaná oblast, tvůj předmět, ECTS, krátký sylabus a odkaz na popis předmětu.",
+      items: ["Mám výpis výsledků (transcript of records)", "Mám popisy relevantních předmětů", "Zkontroloval/a jsem požadované ECTS", "Vím, zda škola chce vlastní sebehodnoticí formulář"],
+      warning: "Náš dotazník shodu ECTS neposuzuje. O splnění akademických podmínek rozhoduje výhradně univerzita.",
     },
     {
       title: "Připrav akademické a jazykové doklady",
       when: "1–3 měsíce před termínem",
-      body: "Běžně budeš potřebovat diplom nebo potvrzení o probíhajícím studiu, transcript, doklad o angličtině a případně sylaby, CV, motivační text či portfolio. Přesný seznam se liší program od programu.",
-      items: ["Diplom / potvrzení o studiu", "Transcript s ECTS nebo kredity", "Oficiální popisy předmětů", "Doklad o angličtině", "CV, motivace či portfolio, pokud jsou vyžadované"],
+      body: "Běžně budeš potřebovat diplom nebo potvrzení o probíhajícím studiu, výpis výsledků, doklad o angličtině a případně sylaby, životopis, motivační text nebo portfolio. Přesný seznam se liší program od programu.",
+      items: ["Diplom / potvrzení o studiu", "Výpis výsledků s ECTS nebo kredity", "Oficiální popisy předmětů", "Doklad o angličtině", "Životopis, motivace nebo portfolio, pokud jsou vyžadované"],
     },
     {
       title: "Vyplň univerzitní portál a odešli včas",
@@ -104,7 +104,7 @@ export function ApplicationGuide() {
   return <>
     <div className="path-switcher" role="group" aria-label="Vyber typ přihlášky">
       <button type="button" className={path === "bachelor" ? "active" : ""} onClick={() => setPath("bachelor")}><span>Po maturitě</span>Bakalář</button>
-      <button type="button" className={path === "master" ? "active" : ""} onClick={() => setPath("master")}><span>Po bakaláři</span>Master</button>
+      <button type="button" className={path === "master" ? "active" : ""} onClick={() => setPath("master")}><span>Po bakalářském studiu</span>Magistr</button>
     </div>
     <div className="checklist-toolbar">
       <div><strong>{completed}/{total}</strong><span>hotovo v tomto prohlížeči</span></div>

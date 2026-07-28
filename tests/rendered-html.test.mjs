@@ -45,13 +45,13 @@ test("renders every public route", async () => {
   const worker = await createWorker();
   const routes = [
     ["/", "Studium v Dánsku"],
-    ["/proc-dansko", "Víc svobody"],
-    ["/programy", "Ne podle prestiže"],
-    ["/jak-se-prihlasit", "Jeden krok"],
-    ["/stehovani", "Přestěhovat se dá za den"],
-    ["/su", "Grant, který pomůže"],
-    ["/zdroje", "Nevěř nám naslepo"],
-    ["/ochrana-soukromi", "Co napíšeš do matcheru"],
+    ["/proc-dansko", "Více samostatnosti"],
+    ["/programy", "Vyber si program"],
+    ["/jak-se-prihlasit", "Jak podat přihlášku"],
+    ["/stehovani", "Stěhování do Dánska"],
+    ["/su", "SU může pomoci"],
+    ["/zdroje", "Ověřuj informace"],
+    ["/ochrana-soukromi", "Text v dotazníku"],
   ];
 
   for (const [path, expected] of routes) {

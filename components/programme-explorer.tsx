@@ -28,7 +28,7 @@ const topicLabels: Record<string, string> = {
   "it-data": "IT a data",
   "engineering-technology": "inženýrství a technologie",
   "design-architecture-arts": "design, architektura a umění",
-  "health-life-science": "zdraví a life science",
+  "health-life-science": "zdravotní a biologické obory",
   "natural-science": "přírodní vědy",
   "sustainability-climate": "udržitelnost a klima",
   "society-politics": "společnost a politika",
@@ -83,10 +83,10 @@ function toggle<T>(values: T[], value: T) {
 function reasonFor(programme: Programme, matchedTopics: string[], cityMatched: boolean, special: string | null) {
   if (special) return special;
   const labels = matchedTopics.slice(0, 2).map((topic) => topicLabels[topic]).join(" a ");
-  if (labels && cityMatched) return `Potkává se s tvým zájmem o ${labels} a také s preferencí města ${programme.city}.`;
-  if (labels) return `Název, zaměření nebo popis programu se potkává s tvým zájmem o ${labels}.`;
-  if (cityMatched) return `Je to širší možnost ve městě ${programme.city}, které sis vybral/a.`;
-  return "Je to širší možnost k prozkoumání podle zvoleného způsobu práce a cíle.";
+  if (labels && cityMatched) return `Program odpovídá tvému zájmu o ${labels} a nachází se ve městě ${programme.city}.`;
+  if (labels) return `Název, zaměření nebo popis programu odpovídá tvému zájmu o ${labels}.`;
+  if (cityMatched) return `Program se nachází ve městě ${programme.city}, které sis vybral/a.`;
+  return "Program může odpovídat zvolenému způsobu práce a tvému cíli.";
 }
 
 export function ProgrammeExplorer() {
@@ -209,14 +209,14 @@ export function ProgrammeExplorer() {
   }, [catalogue, search, catalogueLevel, topic, catalogueCity, institution]);
 
   if (loadError) return <div className="callout callout-red"><strong>Katalog se nepodařilo načíst.</strong><p>Zkus stránku obnovit. Oficiální programy můžeš mezitím hledat na Study in Denmark.</p></div>;
-  if (!catalogue) return <div className="catalogue-loading" aria-live="polite">Načítám ověřovací katalog programů…</div>;
+  if (!catalogue) return <div className="catalogue-loading" aria-live="polite">Načítám katalog programů…</div>;
 
   return (
     <>
       <section id="dotaznik" className="matcher-app shell content-section">
         <div className="tool-heading">
-          <div><p className="eyebrow"><span /> 2 minuty · bez registrace</p><h2>Najdi průsečík svých zájmů.</h2></div>
-          <p>Matcher používá jen dodanou databázi skutečných programů. Tvoje volná odpověď zůstává v tomto prohlížeči.</p>
+          <div><p className="eyebrow"><span /> 2 minuty · bez registrace</p><h2>Vyplň krátký dotazník.</h2></div>
+          <p>Dotazník používá pouze databázi skutečných programů. Tvoje volná odpověď zůstává v tomto prohlížeči.</p>
         </div>
         <form className="matcher-form" onSubmit={match}>
           <fieldset className="question-card question-featured">
@@ -249,20 +249,20 @@ export function ProgrammeExplorer() {
         </form>
 
         {hasMatched && <div id="vysledky" className="matcher-results" aria-live="polite">
-          <div className="results-heading"><div><p className="eyebrow"><span /> Tvoje výsledky</p><h2>{results.length ? `${results.length} směrů k prozkoumání` : "Potřebujeme ještě jednu stopu"}</h2></div><p>{results.length ? "Pořadí není žebříček kvality. Je to vysvětlená shoda s tím, co jsi zadal/a." : "Zkus přidat konkrétní zájem, způsob práce nebo cíl. Nechceme předstírat přesnost bez signálu."}</p></div>
+          <div className="results-heading"><div><p className="eyebrow"><span /> Tvoje výsledky</p><h2>{results.length ? `${results.length} programů k porovnání` : "Upřesni svou odpověď"}</h2></div><p>{results.length ? "Pořadí není žebříček kvality. Ukazuje, jak programy odpovídají tomu, co jsi zadal/a." : "Přidej konkrétní zájem, způsob práce nebo budoucí cíl. Potom zkus dotazník odeslat znovu."}</p></div>
           <div className="programme-list">
             {results.map((programme, index) => <ProgrammeCard key={programme.id} programme={programme} index={index + 1} reason={programme.reason} favourite={favourites.includes(programme.id)} onFavourite={() => saveFavourite(programme.id)} />)}
           </div>
-          {!!results.length && <div className="callout callout-blue"><strong>Důležitá hranice doporučení</strong><p>Matcher neověřuje, zda splňuješ předměty, známky, angličtinu ani ECTS. Dostupnost programu a podmínky vždy zkontroluj na webu školy.</p></div>}
+          {!!results.length && <div className="callout callout-blue"><strong>Co dotazník neumí ověřit</strong><p>Dotazník nekontroluje požadované předměty, známky, angličtinu ani ECTS. Dostupnost programu a podmínky vždy zkontroluj na webu školy.</p></div>}
         </div>}
       </section>
 
       <section id="katalog" className="catalogue-section">
         <div className="shell">
-          <div className="tool-heading"><div><p className="eyebrow eyebrow-light"><span /> Kompletní katalog</p><h2>Všech {catalogue.meta.includedTotal} programů.</h2></div><p>{catalogue.meta.counts.bachelor} bakalářských a {catalogue.meta.counts.master} magisterských programů vyučovaných v angličtině. Data pro objevování, ne rozhodnutí o přijetí.</p></div>
+          <div className="tool-heading"><div><p className="eyebrow eyebrow-light"><span /> Kompletní katalog</p><h2>Všech {catalogue.meta.includedTotal} programů.</h2></div><p>{catalogue.meta.counts.bachelor} bakalářských a {catalogue.meta.counts.master} magisterských programů vyučovaných v angličtině. Katalog slouží k orientaci. O přijetí rozhoduje škola.</p></div>
           <div className="catalogue-filters">
             <label className="search-field">Hledat<input value={search} onChange={(event) => { setSearch(event.target.value); setVisible(18); }} placeholder="Název, škola, město…" /></label>
-            <label>Úroveň<select value={catalogueLevel} onChange={(event) => { setCatalogueLevel(event.target.value); setVisible(18); }}><option value="all">Všechny</option><option value="bachelor">Bachelor</option><option value="master">Master</option></select></label>
+            <label>Úroveň<select value={catalogueLevel} onChange={(event) => { setCatalogueLevel(event.target.value); setVisible(18); }}><option value="all">Všechny</option><option value="bachelor">Bakalářské</option><option value="master">Magisterské</option></select></label>
             <label>Obor<select value={topic} onChange={(event) => { setTopic(event.target.value); setVisible(18); }}><option value="all">Všechny obory</option>{Object.entries(topicLabels).filter(([key]) => key !== "other").map(([key, label]) => <option value={key} key={key}>{label}</option>)}</select></label>
             <label>Město<select value={catalogueCity} onChange={(event) => { setCatalogueCity(event.target.value); setVisible(18); }}><option value="all">Všechna města</option>{cities.map((item) => <option key={item}>{item}</option>)}</select></label>
             <label>Škola<select value={institution} onChange={(event) => { setInstitution(event.target.value); setVisible(18); }}><option value="all">Všechny školy</option>{institutions.map((item) => <option key={item}>{item}</option>)}</select></label>
@@ -273,7 +273,7 @@ export function ProgrammeExplorer() {
           </div>
           {!filtered.length && <div className="empty-state"><strong>Nenalezli jsme žádný program.</strong><p>Zkus ubrat filtr nebo použít kratší hledané slovo.</p></div>}
           {visible < filtered.length && <button className="button button-light load-more" type="button" onClick={() => setVisible((value) => value + 18)}>Načíst dalších 18</button>}
-          <p className="catalogue-disclaimer">Aktualizace databáze: 14. 7. 2026 · Zdroj: Study in Denmark a odkazy univerzit · Program může změnit název, intake nebo podmínky.</p>
+          <p className="catalogue-disclaimer">Aktualizace databáze: 14. 7. 2026 · Zdroj: Study in Denmark a odkazy univerzit · Program může změnit název, termín nástupu nebo podmínky.</p>
         </div>
       </section>
     </>
@@ -283,7 +283,7 @@ export function ProgrammeExplorer() {
 function ProgrammeCard({ programme, index, reason, favourite, onFavourite }: { programme: Programme; index?: number; reason?: string; favourite: boolean; onFavourite: () => void }) {
   return <article className="programme-card">
     <div className="programme-card-top">
-      <span className="programme-level">{programme.level === "bachelor" ? "Bachelor" : "Master"}</span>
+      <span className="programme-level">{programme.level === "bachelor" ? "Bakalář" : "Magistr"}</span>
       <button type="button" className={favourite ? "favourite favourite-active" : "favourite"} aria-label={favourite ? "Odebrat z uložených" : "Uložit program"} aria-pressed={favourite} onClick={onFavourite}>{favourite ? "★" : "☆"}</button>
     </div>
     {index && <span className="result-number">0{index}</span>}
