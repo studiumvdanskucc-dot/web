@@ -107,8 +107,8 @@ Use the exact core copy from `01_COPY_CS.md`. Structure:
    - Jsem přijatý/á → moving checklist
    - Už jsem v Dánsku → SU guide
 4. Interactive three-question programme teaser using the same deterministic scoring as the full matcher.
-5. “Dánsko bez růžových brýlí” balance section.
-6. Tereza's story, project purpose and team cards. Use placeholders until approved real bios/images are supplied.
+5. Friendly “Dobré vědět předem” planning section.
+6. Teri's approved story, project purpose and expert-community invitation.
 7. Final CTA and compact independent-guide disclaimer.
 
 Do not use a giant Danish flag as the hero. Do not create a corporate consulting aesthetic.
@@ -269,9 +269,9 @@ Use real people only. Until biographies and portraits are approved, render polis
 
 Suggested structure:
 
-- Tereza — founder story and lived experience;
+- Teri — founder story and lived experience;
 - why the project exists;
-- Patrik / Hana / Jakub — roles, one sentence each, only after confirmation;
+- invitation to contact the wider expert community after reading the site;
 - principles: zdarma, lidsky, ověřitelně, bez provize za volbu školy.
 
 Do not claim a team member studied at, worked at or received SU from an institution unless supplied and approved.
@@ -374,4 +374,3 @@ The work is done only when:
 - the finished result feels human, editorial and distinctly original.
 
 Start by summarising your understanding and naming any essential missing founder inputs. Do not ask about decisions already answered in the supplied files.
-
