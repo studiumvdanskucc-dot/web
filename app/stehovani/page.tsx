@@ -16,7 +16,7 @@ const timeline = [
 
 export default function MovingPage() {
   return <main id="hlavni-obsah">
-    <section className="page-hero shell"><div className="page-hero-grid"><div><p className="eyebrow"><span /> Od přijetí k prvnímu týdnu</p><h1>Přestěhovat se dá za den.<br />Zařídit život chce plán.</h1></div><p className="lead">Nejdřív si připrav rozpočet a bydlení. Po příjezdu vyřeš pobytový dokument, CPR, MitID, banku a práci. Teprve potom může přijít žádost o SU.</p></div></section>
+    <section className="page-hero shell"><div className="page-hero-grid"><div><p className="eyebrow"><span /> Od přijetí k prvnímu týdnu</p><h1>Stěhování do Dánska krok za krokem.</h1></div><p className="lead">Nejdřív si připrav rozpočet a bydlení. Po příjezdu vyřeš pobytový dokument, CPR, MitID, banku a práci. Teprve potom může přijít žádost o SU.</p></div></section>
     <div className="timeline-strip">{timeline.map(([title, text], index) => <div key={title}><span>0{index + 1}</span><strong>{title}</strong><p>{text}</p></div>)}</div>
     <section className="moving-warning"><div className="shell"><p className="eyebrow eyebrow-light"><span /> Realistický rozpočet</p><h2>10 000 DKK většinou nestačí.</h2><p>V soukromém pronájmu může být požadován až tříměsíční depozit, až tři měsíce předplaceného nájmu a první nájem. Při nájmu 6 000 DKK tak může počáteční platba dosáhnout až 42 000 DKK.</p><a className="button button-light" href="#rozpocet">Spočítat vlastní rozpočet ↓</a></div></section>
     <MovingTools />

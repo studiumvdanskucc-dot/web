@@ -121,14 +121,13 @@ export default function Home() {
           <Link className="text-link" href="/proc-dansko">Proč studovat v Dánsku →</Link>
         </div>
         <div className="reality-panel reality-honest">
-          <p className="eyebrow eyebrow-light"><span /> Dobré vědět předem</p>
-          <h2>S plánem se začíná mnohem klidněji.</h2>
+          <p className="eyebrow eyebrow-light"><span /> S čím počítat</p>
+          <h2>Začátek může být náročný.</h2>
           <p>
-            Život v Dánsku bývá dražší a bydlení je dobré začít hledat včas. První týdny mohou chtít
-            trochu trpělivosti, ale s finanční rezervou a jasným plánem se dají zvládnout bez
-            zbytečného stresu.
+            Dánsko je drahé, bydlení se hledá brzy a první práce nemusí přijít za týden. V zimě je tma,
+            fouká a spoustu věcí si musíš zařídit sám nebo sama.
           </p>
-          <Link className="text-link text-link-light" href="/stehovani">Jak si připravit rozpočet →</Link>
+          <Link className="text-link text-link-light" href="/stehovani">Kolik si připravit →</Link>
         </div>
       </section>
 
@@ -153,48 +152,38 @@ export default function Home() {
           <p className="eyebrow"><span /> O projektu</p>
           <h2>Ahoj, jsem Teri.</h2>
           <p className="large-copy">
-            Do Dánska jsem se přestěhovala za studiem. Netušila jsem, že mi otevře cestu od AP
-            programu až k dvojitému magisterskému titulu, výzkumu, startupům — a také k lidem, kteří
-            změnili můj život.
+            Do Dánska jsem přijela studovat. Začínala jsem programem AP Digital Communication and
+            Media/Multimedia na IBA v Koldingu a pokračovala bakalářským studiem Fashion Branding
+            and Marketing na VIA University College.
           </p>
           <p>
-            Začala jsem programem Multimedia Design na IBA Kolding, pokračovala profesním
-            bakalářským studiem Branding &amp; Marketing na VIA University College a navázala
-            magisterským studiem na Aalborg University. V roce 2026 jsem pak dokončila také
-            mezinárodní dvojitý magisterský program zaměřený na Innovation Management a Management
-            Science &amp; Engineering.
+            Studium v Dánsku změnilo můj osobní i pracovní život. Potkala jsem tam svého manžela,
+            kamarádku, která mi později šla za svědkyni, a mnoho dalších skvělých lidí. Díky
+            zkušenostem z Dánska jsem také mohla cestovat a pracovat v různých zemích.
           </p>
           <p>
-            Dánsko mi ale dalo mnohem víc než vzdělání. Potkala jsem tam svého manžela, svou budoucí
-            svědkyni a mnoho úžasných lidí, kteří se stali důležitou součástí mého života. Studium
-            a mezinárodní komunita mi zároveň otevřely cestu do světa — k cestování, práci i
-            zkušenostem v dalších zemích a kulturách.
+            Dánské školy mě podporovaly v tom, abych studium propojila s praxí. Postupně jsem prošla
+            praxemi, stážemi a studentskými pracemi až k výzkumu, vedení kreativních projektů a
+            vlastním startupům. Vím, kolik možností může Dánsko otevřít, ale také kolik otázek člověk
+            řeší před odjezdem.
           </p>
           <p>
-            Během studia jsem nezůstala jen ve školní lavici. Začínala jsem stážemi a studentskými
-            pracemi, později působila jako výzkumná asistentka na Aarhus University, pomáhala
-            studentským podnikatelům jako Startup Buddy a Marketing Specialist, vedla kreativní
-            projekty jako Art Director a sama spolubudovala startupy.
-          </p>
-          <p>
-            Právě to mám na Dánsku ráda: školy ti dávají důvěru, prostor zkoušet vlastní nápady
-            a podporu, když chceš studium propojit s praxí. Proto vzniklo doDánska — abych ti předala
-            jasné a ověřitelné informace, které bych sama na začátku potřebovala.
+            Proto vzniklo doDánska. Chci na jednom místě nabídnout jasné a ověřitelné informace,
+            které bych sama na začátku potřebovala.
           </p>
           <div className="value-chips">
-            <span>Od AP po dvojitý magisterský titul</span>
-            <span>Výzkum na Aarhus University</span>
-            <span>Art direction a startupy</span>
+            <span>AP a bakalář v Dánsku</span>
+            <span>Stáže a studentské práce</span>
+            <span>Výzkum a startupy</span>
             <span>Mezinárodní zkušenosti</span>
           </div>
           <div className="about-support">
             <div>
               <h3>Zůstaly ti otázky?</h3>
               <p>
-                Nejdřív projdi všechny části webu. Pokud odpověď nenajdeš, napiš nám. K projektu se
-                už přislíbili přidat lidé z technických oborů, psychologie, medicíny i byznysu,
-                kteří si s tebou mohou krátce promluvit o tvých cílech a podělit se o zkušenosti
-                ze svého oboru.
+                Nejprve projdi jednotlivé části webu. Pokud odpověď nenajdeš, ozvi se. K projektu se
+                už přidávají další studenti a absolventi, kteří s tebou mohou probrat cíle v
+                inženýrství, psychologii, medicíně nebo byznysu.
               </p>
             </div>
             <a
@@ -212,7 +201,7 @@ export default function Home() {
       <section className="final-cta">
         <div className="shell final-cta-inner">
           <p className="eyebrow eyebrow-light"><span /> Tvůj další krok</p>
-          <h2>Začni teď, ale nespěchej!<br />Krůček po krůčku. <span className="cta-smile" aria-hidden="true">☺️</span></h2>
+          <h2>Začni výběrem programu.<br />Pak pokračuj krok za krokem.</h2>
           <Link className="button button-light" href="/programy#dotaznik">Najít můj program <span aria-hidden="true">↗</span></Link>
         </div>
       </section>

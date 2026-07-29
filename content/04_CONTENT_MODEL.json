@@ -26,11 +26,35 @@
   "people": [
     {
       "id": "tereza",
-      "name": "Teri Molnár",
-      "role": "Zakladatelka projektu doDánska",
-      "bio": "V Dánsku studovala od AP programu až po magisterské studium, pracovala na Aarhus University, pomáhala studentským startupům a vedla kreativní projekty. Projekt založila, aby budoucím studentům předala jasné a ověřitelné informace, které sama na začátku hledala.",
-      "image": "/images/teri-molnar.webp",
-      "publish": true
+      "name": "Tereza",
+      "role": "Zakladatelka",
+      "bio": "[DOPLNIT A SCHVÁLIT]",
+      "image": "[DOPLNIT]",
+      "publish": false
+    },
+    {
+      "id": "patrik",
+      "name": "Patrik",
+      "role": "[DOPLNIT]",
+      "bio": "[DOPLNIT A SCHVÁLIT]",
+      "image": "[DOPLNIT]",
+      "publish": false
+    },
+    {
+      "id": "hana",
+      "name": "Hana",
+      "role": "[DOPLNIT]",
+      "bio": "[DOPLNIT A SCHVÁLIT]",
+      "image": "[DOPLNIT]",
+      "publish": false
+    },
+    {
+      "id": "jakub",
+      "name": "Jakub",
+      "role": "[DOPLNIT]",
+      "bio": "[DOPLNIT A SCHVÁLIT]",
+      "image": "[DOPLNIT]",
+      "publish": false
     }
   ],
   "facts": {

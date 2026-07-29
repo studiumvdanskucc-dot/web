@@ -127,27 +127,27 @@ Pomocný text: `Napiš klidně jednu větu česky, slovensky nebo anglicky. Odpo
 
 CTA: **Ukázat první nápady**
 
-## Dobré vědět předem
+## Dánsko bez růžových brýlí
 
-# S plánem se začíná mnohem klidněji.
+# Je to skvělá možnost. Ne bezstarostná dovolená.
 
-Život v Dánsku bývá dražší a bydlení je dobré začít hledat včas. První týdny mohou chtít trochu trpělivosti, ale s finanční rezervou a jasným plánem se dají zvládnout bez zbytečného stresu.
+Dánsko umí nabídnout svobodu, praktické studium a mezinárodní prostředí. Zároveň je drahé, bydlení se hledá brzy a první studentská práce nemusí přijít za týden. V zimě je tma, fouká a spoustu věcí si musíš zařídit sám nebo sama.
 
-Tento web ti pomůže připravit jednotlivé kroky tak, aby sis začátek mohl/a opravdu užít.
+Dobrá zpráva? Když víš, co tě čeká, je to zvládnutelný projekt. Tento web ti má pomoct právě s tím.
 
-CTA: **Jak si připravit rozpočet**
+CTA: **Kolik si připravit na začátek**
 
 ## O Tereze
 
 Eyebrow: **Od studentky pro budoucí studenty**
 
-# Ahoj, jsem Teri.
+# Ahoj, jsem Tereza.
 
-Do Dánska jsem se přestěhovala za studiem. Netušila jsem, že mi otevře cestu od AP programu až k dvojitému magisterskému titulu, výzkumu, startupům — a také k lidem, kteří změnili můj život.
+[DOPLNIT A SCHVÁLIT: 90–130 slov v první osobě. Doporučená struktura: odkud Tereza je; proč si vybrala Dánsko; co pro ni bylo při přihlášce/stěhování nejsložitější; co studovala; co by si přála tehdy vědět. Neuvádět školy, SU ani konkrétní zkušenosti bez jejího potvrzení.]
 
-Začala jsem programem Multimedia Design na IBA Kolding, pokračovala profesním bakalářským studiem Branding & Marketing na VIA University College a navázala magisterským studiem na Aalborg University. V roce 2026 jsem dokončila také mezinárodní dvojitý magisterský program zaměřený na Innovation Management a Management Science & Engineering.
+Pracovní text, který lze po ověření upravit:
 
-Dánsko mi dalo mnohem víc než vzdělání. Potkala jsem tam svého manžela, svou budoucí svědkyni a mnoho úžasných přátel. Zkušenosti z Dánska mi otevřely cestu k cestování, práci v zahraničí, výzkumu na Aarhus University, kreativnímu vedení i startupům. Proto vzniklo doDánska — abych ti předala jasné informace, které bych sama na začátku potřebovala.
+> Do Dánska jsem kdysi přijela jako česká studentka s velkým očekáváním a ještě větším seznamem otázek. Postupně jsem si prošla výběrem školy, přihláškou i praktickým životem v nové zemi. Zjistila jsem, že spousta důležitých informací existuje — jen jsou rozdělené mezi desítky anglických a dánských stránek. Proto vzniká tento průvodce. Chceme, aby sis dokázal/a udělat vlastní dobré rozhodnutí, věděl/a, co si ověřit, a nemusel/a zbytečně opakovat naše chyby.
 
 CTA: **Proč tenhle projekt děláme**
 
@@ -164,17 +164,29 @@ Hodnoty:
 - **Ověřitelně:** důležité tvrzení vede k oficiálnímu zdroji.
 - **Upřímně:** ukazujeme výhody i náklady, podmínky a rizika.
 
-## Kdo za projektem stojí
+## Tým
 
-### Teri Molnár — zakladatelka
+### Tereza — zakladatelka
 
-Teri vystudovala v Dánsku několik programů od AP po magisterskou úroveň. Během studia pracovala na Aarhus University, podporovala studentské podnikatele, vedla kreativní projekty a spolubudovala startupy.
+[DOPLNIT: schválená role a bio, 35–55 slov.]
 
-Pokud po projití všech částí webu zůstanou otázky, ozvi se. K projektu se už přislíbili přidat lidé z techniky, psychologie, medicíny i byznysu, kteří mohou nabídnout zkušenost ze svého oboru.
+### Patrik — [DOPLNIT ROLI]
+
+[DOPLNIT: 25–40 slov.]
+
+### Hana — [DOPLNIT ROLI]
+
+[DOPLNIT: 25–40 slov.]
+
+### Jakub — [DOPLNIT ROLI]
+
+[DOPLNIT: 25–40 slov.]
+
+Poznámka pro produkci: kartu bez reálného schváleného textu a fotografie skrýt.
 
 ## Závěrečný CTA blok
 
-# Začni teď, ale nespěchej! Krůček po krůčku. ☺️
+# Začni programem. Zbytek rozmotáme krok za krokem.
 
 Nemusíš dnes vědět, kde budeš bydlet ani jak se vyslovuje `rødgrød med fløde`. Stačí zjistit, které obory stojí za další kliknutí.
 
@@ -206,13 +218,11 @@ CTA: **Spočítat rozpočet na stěhování**
 
 ## Studium, kde nestačí mlčet v poslední lavici
 
-# Projektová výuka je standardem!
+# Méně memorování. Víc otázek, týmů a opravdových problémů.
 
 Dánské školy jsou známé prací v týmu, diskusí, projektovou výukou a propojováním teorie s praxí. Často budeš obhajovat své řešení, dávat spolužákům zpětnou vazbu a kontaktovat firmy nebo organizace. U profesních bakalářských programů bývá důležitou součástí také praxe.
 
-Vyučující oslovuješ křestním jménem. Méně hierarchie může usnadnit otázky i spolupráci. Respekt se ukazuje přípravou a spolehlivostí.
-
-Rozdělování práce, dávání zpětné vazby a obhajování rozhodnutí jsou součástí odbornosti.
+Není to lehčí studium. Je to jiný druh práce: samostatnost, spolupráce a schopnost vysvětlit, proč tvoje řešení dává smysl.
 
 ## Angličtina jako normální pracovní jazyk
 
@@ -248,15 +258,15 @@ Volný čas nemusí znamenat luxusní plán: studentský bar, společná večeř
 
 Dánský veřejný prostor často působí jednoduše, funkčně a promyšleně. Ve škole bývá menší odstup mezi studentem a vyučujícím a běžná je otevřená diskuse. To může být osvobozující — a zpočátku nezvyklé. Nikdo ti nebude stát pořád za zády. Očekává se, že se ozveš, když něco nevíš, a že převezmeš odpovědnost za vlastní práci.
 
-## Dobré vědět předem
+## Co se nevejde do instagramového carouselu
 
-# Začátek chce trochu přípravy.
+# Dánsko nemusí sednout každému. A to je v pořádku.
 
-- **Bydlení je dobré hledat včas.** Počítej také s počáteční platbou.
-- **SU nedostaneš automaticky.** Je potřeba splnit podmínky.
-- **V zimě jsou dny kratší a někdy fouká.** Útulné večery, pohyb a lidé kolem dokážou tmavší měsíce zpříjemnit.
+- **Bydlení se hledá brzy.** V Kodani může být drahé a konkurence vysoká.
+- **První měsíce stojí peníze.** SU nepřijde automaticky a práci nemusíš najít hned.
+- **Zima je tmavá a větrná.** Dobré světlo, rutina, pohyb a lidé kolem nejsou maličkost.
 - **Skupinové projekty jsou opravdu skupinové.** Naučí tě hodně, ale občas i trpělivosti.
-- **Dánština se vyplatí.** Může ti otevřít více pracovních možností a usnadnit běžný život.
+- **Samostatnost je součást studia.** Když čekáš přesný návod ke každému úkolu, začátek může bolet.
 
 Závěr:
 
@@ -721,9 +731,7 @@ CTA: **Stáhnout můj checklist**
 
 Eyebrow: **Od acceptance letter k prvnímu týdnu**
 
-# Přestěhovat se dá za den.
-
-# Zařídit život chce plán.
+# Přestěhovat se dá za den. Zařídit si život chce plán.
 
 Nejdřív peníze a bydlení. Po příjezdu pobytový dokument, CPR, MitID, banka, daňová karta, práce — a teprve potom případná SU. Tady je pořadí, které ti ušetří běhání v kruhu.
 
@@ -959,9 +967,7 @@ CTA: **Projít žádost o SU krok za krokem**
 
 Eyebrow: **SU bez mýtů**
 
-# Grant, který pomůže.
-
-# Pravidla, která musíš brát vážně.
+# Grant, který může zásadně pomoct. A pravidla, která musíš brát vážně.
 
 SU je dánský státní příspěvek na studium. Běžná SU není půjčka a při oprávněném čerpání se nevrací. Pro zahraničního studenta z EU ale není automatická: nejčastěji musí získat status pracovníka podle práva EU.
 
@@ -1262,3 +1268,4 @@ Footer disclaimer:
 `Nezávislý průvodce. Nejsme dánský úřad ani univerzita. Vždy ověř aktuální pravidla u instituce, která o tvé situaci rozhoduje.`
 
 Copyright: `© [ROK] [NÁZEV PROJEKTU]`
+

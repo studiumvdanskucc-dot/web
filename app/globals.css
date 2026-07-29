@@ -143,7 +143,6 @@ ul { margin-top: 0; }
 .final-cta-inner { position: relative; }
 .final-cta-inner::after { content: "DK"; position: absolute; right: -5%; top: 50%; transform: translateY(-50%); font: 900 300px/.8 var(--display); color: rgba(255,255,255,.08); pointer-events: none; }
 .final-cta h2 { font-size: clamp(54px, 7vw, 96px); max-width: 850px; margin-bottom: 40px; position: relative; z-index: 1; }
-.cta-smile { display: inline-block; font-size: .62em; line-height: 1; vertical-align: .08em; }
 .button-light { background: var(--yellow); border-color: var(--yellow); color: var(--ink); position: relative; z-index: 1; }
 .button-light:hover { background: white; border-color: white; color: var(--ink); }
 
