@@ -18,7 +18,7 @@ const steps = [
 
 export default function SuPage() {
   return <main id="hlavni-obsah">
-    <section className="page-hero shell"><div className="page-hero-grid"><div><p className="eyebrow"><span /> SU bez mýtů</p><h1>SU může pomoci, ale má jasné podmínky.</h1></div><div><p className="lead">SU je dánská státní podpora studentů. Pokud ji dostáváš oprávněně, běžná SU se nevrací. Student z EU na ni ale nemá nárok automaticky.</p><a className="button" href="#co-potrebuji">Zjistit, co potřebuji ↓</a></div></div></section>
+    <section className="page-hero shell"><div className="page-hero-grid"><div><p className="eyebrow"><span /> SU bez mýtů</p><h1>Grant, který pomůže.<br />Pravidla, která musíš brát vážně.</h1></div><div><p className="lead">SU je dánská státní podpora studentů. Pokud ji dostáváš oprávněně, běžná SU se nevrací. Student z EU na ni ale nemá nárok automaticky.</p><a className="button" href="#co-potrebuji">Zjistit, co potřebuji ↓</a></div></div></section>
     <section className="su-facts shell">
       <article><span>7 426</span><h2>DKK měsíčně</h2><p>Pro studenta vysoké školy bydlícího mimo rodiče v roce 2026, před zdaněním.</p></article>
       <article><span>Ne</span><h2>běžná SU se nevrací</h2><p>Pokud byla vyplacena oprávněně. SU-lån je samostatná půjčka a neoprávněná SU se vrací.</p></article>

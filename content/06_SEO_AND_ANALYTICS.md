@@ -11,7 +11,7 @@ Replace `[ZNAČKA]` after the brand is chosen. Keep titles around 50–60 visibl
 | Route | Title | Meta description |
 |---|---|---|
 | `/` | Studium v Dánsku pro Čechy a Slováky | [ZNAČKA] | Najdi anglický program, připrav přihlášku, naplánuj stěhování a pochop SU. Praktický průvodce studiem v Dánsku krok za krokem. |
-| `/proc-dansko` | Proč studovat v Dánsku: výhody i realita | [ZNAČKA] | Studium bez školného pro občany EU, programy v angličtině, SU, dánština i náklady. Dánsko bez růžových brýlí. |
+| `/proc-dansko` | Proč studovat v Dánsku: výhody i praktické informace | [ZNAČKA] | Studium bez školného pro občany EU, programy v angličtině, SU, dánština, studentský život i plánování nákladů. |
 | `/programy` | Anglické bakalářské a magisterské programy v Dánsku | Prohledej anglické programy v Dánsku a získej transparentní doporučení podle svých zájmů. Vždy s odkazem na oficiální web školy. |
 | `/jak-se-prihlasit` | Jak se přihlásit na školu v Dánsku: návod | Bakalář přes Optagelse.dk i magistr přes univerzitní portál. Dokumenty, překlady, termíny a podpisová stránka vysvětlené jednoduše. |
 | `/stehovani` | Stěhování do Dánska: bydlení, rozpočet a CPR | Kolik si připravit, kde hledat bydlení v Kodani, Aarhusu, Odense a Aalborgu a co zařídit po příjezdu ve správném pořadí. |
@@ -217,4 +217,3 @@ For v1, server logs plus a small set of aggregate consent-aware events may be su
 - [ ] DateModified changes only after meaningful editorial update.
 - [ ] Source URLs tested.
 - [ ] No placeholder/test environment indexed.
-
