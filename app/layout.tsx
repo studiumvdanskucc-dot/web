@@ -26,10 +26,20 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body>
-        <a className="skip-link" href="#hlavni-obsah">Přeskočit na obsah</a>
+        <a className="skip-link" href="#hlavni-obsah">
+          Přeskočit na obsah
+        </a>
+
         <SiteHeader />
         {children}
         <SiteFooter />
+
+        {/* Cloudflare Web Analytics */}
+        <script
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token":"0c3d02a76f1948a08e2bb1eb65111a91"}'
+        ></script>
       </body>
     </html>
   );
