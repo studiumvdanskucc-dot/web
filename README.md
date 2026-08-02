@@ -4,7 +4,7 @@
 
 - obsahové stránky o studiu, přihlášce, stěhování a SU;
 - lokální programový matcher bez placeného LLM a bez odesílání volného textu;
-- filtrovatelný katalog 352 anglicky vyučovaných programů;
+- filtrovatelný katalog 360 anglicky vyučovaných programů, včetně AP a Top-up cest pro 2027/28;
 - checklisty uložené pouze v prohlížeči;
 - kalkulačku startovního rozpočtu a deset-týdenní SU plánovač hodin.
 
@@ -37,11 +37,11 @@ npm run build
 - `public/data/programmes.json` — databáze pro katalog a doporučení;
 - `public/images/` — původní obrazové materiály webu;
 - `content/` — redakční zadání, zdroje, datový model a metodika;
-- `scripts/update_programmes.mjs` — nástroj pro obnovu programu z veřejného katalogu.
+- `scripts/update_programmes.mjs` — nástroj pro obnovu katalogu a zachování ručně ověřených AP/Top-up programů pro 2027/28.
 
 ## Aktualizace programů
 
-Databáze je discovery katalog, nikoli rozhodnutí o přijetí. Před radou studentovi vždy otevři oficiální stránku programu. Doporučená frekvence obnovy je měsíčně od listopadu do března a mimo sezonu čtvrtletně.
+Databáze je discovery katalog, nikoli rozhodnutí o přijetí. Před radou studentovi vždy otevři oficiální stránku programu. AP a Top-up záznamy obsahují navíc stav dostupnosti pro 2027/28; i ten je nutné před přihláškou znovu ověřit. Doporučená frekvence obnovy je měsíčně od listopadu do března a mimo sezonu čtvrtletně.
 
 ```bash
 node scripts/update_programmes.mjs
@@ -49,20 +49,20 @@ node scripts/update_programmes.mjs
 
 Po aktualizaci zkontroluj počet záznamů, změny názvů, mrtvé odkazy a znovu spusť testy.
 
-## GitHub a hosting
+## GitHub Pages
 
-Projekt lze vložit do nového GitHub repozitáře běžným postupem:
+Repozitář obsahuje automatický workflow v `.github/workflows/deploy-pages.yml`.
+Každý push do větve `main` vytvoří statický export v `out/` a publikuje jej přes
+GitHub Pages. V nastavení repozitáře musí být v **Settings → Pages → Source**
+vybráno **GitHub Actions**.
+
+Lokální kontrola stejného exportu:
 
 ```bash
-git init
-git add .
-git commit -m "Initial doDánska website"
-git branch -M main
-git remote add origin https://github.com/UZIVATEL/REPO.git
-git push -u origin main
+GITHUB_PAGES=true npm run build:pages
 ```
 
-GitHub zde slouží jako úložiště zdrojového kódu. Aplikace používá Vinext a serverový Cloudflare Worker, proto není bez úprav určena pro čistě statické GitHub Pages. Pro vlastní Cloudflare Workers hosting nejdříve spusť `npm run build` a potom nasaď konfiguraci v `dist/server/wrangler.json`, nebo připoj repozitář k hostingu, který umí Cloudflare Workers/Vinext.
+Soubor `public/CNAME` zachovává vlastní doménu `studiumvdansku.cc`.
 
 ## Obsahová bezpečnost
 

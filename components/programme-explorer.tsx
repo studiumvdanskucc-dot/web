@@ -3,11 +3,20 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 
 type Level = "bachelor" | "master";
+type ProgrammeType = "bachelor" | "ap-degree" | "top-up-bachelor" | "master";
+type StudyRoute = "all" | "bachelor-all" | ProgrammeType;
+
+type Intake2027 = {
+  status: "confirmed-2027" | "annual-intake";
+  label: string;
+  note: string;
+};
 
 type Programme = {
   id: string;
   title: string;
   level: Level;
+  programmeType: ProgrammeType;
   institution: string;
   city: string;
   duration: string | null;
@@ -15,13 +24,34 @@ type Programme = {
   description: string;
   officialProgrammeUrl: string;
   sourceUrl: string;
+  availabilitySourceUrl?: string;
+  intake2027?: Intake2027;
   lastChecked: string;
 };
 
 type Catalogue = {
-  meta: { includedTotal: number; counts: Record<Level, number>; generatedAt: string; warning: string };
+  meta: {
+    includedTotal: number;
+    counts: Record<Level, number>;
+    typeCounts: Record<ProgrammeType, number>;
+    generatedAt: string;
+    warning: string;
+  };
   programmes: Programme[];
 };
+
+const programmeTypeLabels: Record<ProgrammeType, string> = {
+  bachelor: "Bakalář",
+  "ap-degree": "AP degree",
+  "top-up-bachelor": "Top-up bakalář",
+  master: "Magistr",
+};
+
+function matchesRoute(programme: Programme, route: StudyRoute) {
+  if (route === "all") return true;
+  if (route === "bachelor-all") return programme.level === "bachelor";
+  return programme.programmeType === route;
+}
 
 const topicLabels: Record<string, string> = {
   "business-management": "byznys a management",
@@ -95,12 +125,12 @@ export function ProgrammeExplorer() {
   const [interests, setInterests] = useState("");
   const [styles, setStyles] = useState<string[]>([]);
   const [selectedGoals, setSelectedGoals] = useState<string[]>([]);
-  const [level, setLevel] = useState<"all" | Level>("all");
+  const [route, setRoute] = useState<StudyRoute>("all");
   const [city, setCity] = useState("all");
   const [results, setResults] = useState<Array<Programme & { reason: string }>>([]);
   const [hasMatched, setHasMatched] = useState(false);
   const [search, setSearch] = useState("");
-  const [catalogueLevel, setCatalogueLevel] = useState("all");
+  const [catalogueRoute, setCatalogueRoute] = useState<StudyRoute>("all");
   const [topic, setTopic] = useState("all");
   const [catalogueCity, setCatalogueCity] = useState("all");
   const [institution, setInstitution] = useState("all");
@@ -137,7 +167,7 @@ export function ProgrammeExplorer() {
     const businessPsychSignal = ["psycholog", "chovani", "spravani", "behavio", "lidi ve firm", "people in business"].some((word) => input.includes(normalize(word))) && (topicSignals.includes("business-management") || selectedGoals.includes("Zlepšovat firmy"));
 
     const ranked = catalogue.programmes
-      .filter((programme) => level === "all" || programme.level === level)
+      .filter((programme) => matchesRoute(programme, route))
       .map((programme) => {
         const title = normalize(programme.title);
         const description = normalize(programme.description || "");
@@ -199,14 +229,14 @@ export function ProgrammeExplorer() {
     if (!catalogue) return [];
     const query = normalize(search);
     return catalogue.programmes.filter((programme) => {
-      const haystack = normalize(`${programme.title} ${programme.institution} ${programme.city} ${programme.description}`);
+      const haystack = normalize(`${programme.title} ${programme.institution} ${programme.city} ${programme.description} ${programme.intake2027?.label || ""} ${programme.intake2027?.note || ""}`);
       return (!query || haystack.includes(query))
-        && (catalogueLevel === "all" || programme.level === catalogueLevel)
+        && matchesRoute(programme, catalogueRoute)
         && (topic === "all" || programme.topics.includes(topic))
         && (catalogueCity === "all" || programme.city === catalogueCity)
         && (institution === "all" || programme.institution === institution);
     });
-  }, [catalogue, search, catalogueLevel, topic, catalogueCity, institution]);
+  }, [catalogue, search, catalogueRoute, topic, catalogueCity, institution]);
 
   if (loadError) return <div className="callout callout-red"><strong>Katalog se nepodařilo načíst.</strong><p>Zkus stránku obnovit. Oficiální programy můžeš mezitím hledat na Study in Denmark.</p></div>;
   if (!catalogue) return <div className="catalogue-loading" aria-live="polite">Načítám katalog programů…</div>;
@@ -242,7 +272,7 @@ export function ProgrammeExplorer() {
 
           <fieldset className="question-card question-split">
             <legend><span>04</span> Co už víš o studiu?</legend>
-            <label>Úroveň studia<select value={level} onChange={(event) => setLevel(event.target.value as "all" | Level)}><option value="all">Ještě nevím / obě</option><option value="bachelor">Bakalářské</option><option value="master">Magisterské</option></select></label>
+            <label>Studijní cesta<select value={route} onChange={(event) => setRoute(event.target.value as StudyRoute)}><option value="all">Ještě nevím / všechny</option><option value="bachelor-all">Všechny bakalářské cesty</option><option value="bachelor">Bakalář / profesní bakalář</option><option value="ap-degree">AP degree</option><option value="top-up-bachelor">Top-up bakalář</option><option value="master">Magistr</option></select></label>
             <label>Preferované město<select value={city} onChange={(event) => setCity(event.target.value)}><option value="all">Kdekoliv</option>{cities.map((item) => <option key={item}>{item}</option>)}</select></label>
           </fieldset>
           <button className="button matcher-submit" type="submit">Ukázat moje možnosti <span aria-hidden="true">→</span></button>
@@ -259,10 +289,14 @@ export function ProgrammeExplorer() {
 
       <section id="katalog" className="catalogue-section">
         <div className="shell">
-          <div className="tool-heading"><div><p className="eyebrow eyebrow-light"><span /> Kompletní katalog</p><h2>Všech {catalogue.meta.includedTotal} programů.</h2></div><p>{catalogue.meta.counts.bachelor} bakalářských a {catalogue.meta.counts.master} magisterských programů vyučovaných v angličtině. Katalog slouží k orientaci. O přijetí rozhoduje škola.</p></div>
+          <div className="tool-heading"><div><p className="eyebrow eyebrow-light"><span /> Kompletní katalog</p><h2>Všech {catalogue.meta.includedTotal} programů.</h2></div><p>{catalogue.meta.typeCounts.bachelor} bakalářských, {catalogue.meta.typeCounts["ap-degree"]} AP, {catalogue.meta.typeCounts["top-up-bachelor"]} Top-up a {catalogue.meta.typeCounts.master} magisterských programů v angličtině. Katalog slouží k orientaci. O přijetí rozhoduje škola.</p></div>
+          <div className="degree-route-note">
+            <div><span>Nově pro 2027/28</span><h3>AP a Top-up nejsou totéž.</h3></div>
+            <p><strong>AP degree</strong> je praktická 2–2,5letá cesta po střední škole. <strong>Top-up</strong> obvykle trvá 1,5 roku a navazuje na kompatibilní AP degree nebo srovnatelné předchozí studium. U současných Top-up programů je kvůli dánské reformě srpen 2027 posledním nástupem.</p>
+          </div>
           <div className="catalogue-filters">
             <label className="search-field">Hledat<input value={search} onChange={(event) => { setSearch(event.target.value); setVisible(18); }} placeholder="Název, škola, město…" /></label>
-            <label>Úroveň<select value={catalogueLevel} onChange={(event) => { setCatalogueLevel(event.target.value); setVisible(18); }}><option value="all">Všechny</option><option value="bachelor">Bakalářské</option><option value="master">Magisterské</option></select></label>
+            <label>Studijní cesta<select value={catalogueRoute} onChange={(event) => { setCatalogueRoute(event.target.value as StudyRoute); setVisible(18); }}><option value="all">Všechny</option><option value="bachelor-all">Všechny bakalářské</option><option value="bachelor">Bakalář / profesní bakalář</option><option value="ap-degree">AP degree</option><option value="top-up-bachelor">Top-up bakalář</option><option value="master">Magistr</option></select></label>
             <label>Obor<select value={topic} onChange={(event) => { setTopic(event.target.value); setVisible(18); }}><option value="all">Všechny obory</option>{Object.entries(topicLabels).filter(([key]) => key !== "other").map(([key, label]) => <option value={key} key={key}>{label}</option>)}</select></label>
             <label>Město<select value={catalogueCity} onChange={(event) => { setCatalogueCity(event.target.value); setVisible(18); }}><option value="all">Všechna města</option>{cities.map((item) => <option key={item}>{item}</option>)}</select></label>
             <label>Škola<select value={institution} onChange={(event) => { setInstitution(event.target.value); setVisible(18); }}><option value="all">Všechny školy</option>{institutions.map((item) => <option key={item}>{item}</option>)}</select></label>
@@ -273,7 +307,7 @@ export function ProgrammeExplorer() {
           </div>
           {!filtered.length && <div className="empty-state"><strong>Nenalezli jsme žádný program.</strong><p>Zkus ubrat filtr nebo použít kratší hledané slovo.</p></div>}
           {visible < filtered.length && <button className="button button-light load-more" type="button" onClick={() => setVisible((value) => value + 18)}>Načíst dalších 18</button>}
-          <p className="catalogue-disclaimer">Aktualizace databáze: 14. 7. 2026 · Zdroj: Study in Denmark a odkazy univerzit · Program může změnit název, termín nástupu nebo podmínky.</p>
+          <p className="catalogue-disclaimer">Aktualizace databáze: {new Intl.DateTimeFormat("cs-CZ", { day: "numeric", month: "numeric", year: "numeric" }).format(new Date(catalogue.meta.generatedAt))} · Zdroj: Study in Denmark a oficiální weby škol · Program může změnit název, termín nástupu nebo podmínky.</p>
         </div>
       </section>
     </>
@@ -283,18 +317,19 @@ export function ProgrammeExplorer() {
 function ProgrammeCard({ programme, index, reason, favourite, onFavourite }: { programme: Programme; index?: number; reason?: string; favourite: boolean; onFavourite: () => void }) {
   return <article className="programme-card">
     <div className="programme-card-top">
-      <span className="programme-level">{programme.level === "bachelor" ? "Bakalář" : "Magistr"}</span>
+      <span className={`programme-level programme-level-${programme.programmeType}`}>{programmeTypeLabels[programme.programmeType]}</span>
       <button type="button" className={favourite ? "favourite favourite-active" : "favourite"} aria-label={favourite ? "Odebrat z uložených" : "Uložit program"} aria-pressed={favourite} onClick={onFavourite}>{favourite ? "★" : "☆"}</button>
     </div>
     {index && <span className="result-number">0{index}</span>}
     <h3>{programme.title}</h3>
     <p className="programme-meta">{programme.institution} · {programme.city}{programme.duration ? ` · ${programme.duration}` : ""}</p>
+    {programme.intake2027 && <div className={`intake-status intake-status-${programme.intake2027.status}`}><strong>{programme.intake2027.label}</strong><span>{programme.intake2027.note}</span></div>}
     {reason && <p className="match-reason">{reason}</p>}
     <div className="topic-tags">{programme.topics.slice(0, 3).map((item) => <span key={item}>{topicLabels[item] || item}</span>)}</div>
     <details>
       <summary>Krátký popis a odkazy</summary>
       <p>{programme.description || "Krátký popis v katalogu chybí. Otevři stránku programu na webu školy."}</p>
-      <div className="programme-links"><a href={programme.officialProgrammeUrl} target="_blank" rel="noreferrer">Web programu ↗</a><a href={programme.sourceUrl} target="_blank" rel="noreferrer">Katalogový zdroj ↗</a></div>
+      <div className="programme-links"><a href={programme.officialProgrammeUrl} target="_blank" rel="noreferrer">{programme.availabilitySourceUrl === programme.officialProgrammeUrl ? "Web programu + dostupnost 2027 ↗" : "Web programu ↗"}</a>{programme.sourceUrl !== programme.officialProgrammeUrl && <a href={programme.sourceUrl} target="_blank" rel="noreferrer">Katalogový zdroj ↗</a>}{programme.availabilitySourceUrl && programme.availabilitySourceUrl !== programme.officialProgrammeUrl && <a href={programme.availabilitySourceUrl} target="_blank" rel="noreferrer">Dostupnost 2027 ↗</a>}</div>
       <small>Doporučení neověřuje tvoje vstupní předměty ani přijetí. Otevři požadavky školy.</small>
     </details>
   </article>;

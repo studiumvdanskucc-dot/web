@@ -131,18 +131,19 @@ Any “free” claim needs its condition in the same component, not hidden in a 
 
 ### Catalogue
 
-Load `data/programmes.json`. It currently contains 352 discovery entries: 53 Bachelor's and 299 Master's programmes. Do not hardcode that count; calculate it at runtime and show the dataset's `generatedAt` date.
+Load `public/data/programmes.json`. It contains English-taught Bachelor, AP, Top-up and Master routes. Do not hardcode any count; calculate it at runtime from `meta.typeCounts` and show the dataset's `generatedAt` date.
 
 Provide:
 
 - keyword search;
-- filters for degree, topic, city and institution;
+- filters for study route (Bachelor, AP, Top-up or Master), topic, city and institution;
 - active filter chips and clear-all action;
 - sort by relevance, A–Z, city and institution;
 - result count and an accessible no-results state;
 - grouped or virtualised rendering so 352 accordions do not harm performance;
 - shareable URL query parameters;
-- programme cards with title, degree, institution, city, duration/ECTS when present, topic chips, short description, “Proč se může hodit” matcher explanation, official institution link and Study in Denmark source link;
+- programme cards with title, programme type, institution, city, duration/ECTS when present, topic chips, short description, “Proč se může hodit” matcher explanation, official institution link and Study in Denmark source link;
+- for curated 2027/28 AP and Top-up records, a visible intake status and direct evidence link;
 - visible copy: `Ověř si aktuální intake, požadavky a deadline přímo u školy.`
 
 Never display a deadline from the discovery catalogue as authoritative. The source catalogue itself says it is being revised. If a date is displayed at all, label it `Neověřený údaj z katalogu` and send users to the official institution.

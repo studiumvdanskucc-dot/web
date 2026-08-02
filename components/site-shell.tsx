@@ -19,10 +19,21 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link className="brand" href="/" aria-label="Do Dánska — úvod">
-          <span className="brand-dot" aria-hidden="true" />
-          <span>do</span>Dánska
-        </Link>
+        <div className="brand-lockup">
+          <Link className="brand" href="/" aria-label="Do Dánska — úvod">
+            <span className="brand-dot" aria-hidden="true" />
+            <span>do</span>Dánska
+          </Link>
+          <a
+            className="brand-byline"
+            href="https://www.tiktok.com/@grafickavdansku"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="TikTok @grafickavdansku"
+          >
+            by @grafickavdansku
+          </a>
+        </div>
 
         <nav className="desktop-nav" aria-label="Hlavní navigace">
           {navItems.map((item) => (
@@ -75,10 +86,21 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-top">
         <div>
-          <Link className="brand brand-footer" href="/">
-            <span className="brand-dot" aria-hidden="true" />
-            <span>do</span>Dánska
-          </Link>
+          <div className="brand-lockup brand-lockup-footer">
+            <Link className="brand brand-footer" href="/">
+              <span className="brand-dot" aria-hidden="true" />
+              <span>do</span>Dánska
+            </Link>
+            <a
+              className="brand-byline"
+              href="https://www.tiktok.com/@grafickavdansku"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TikTok @grafickavdansku"
+            >
+              by @grafickavdansku
+            </a>
+          </div>
           <p>Dánsko krok za krokem. Česky, upřímně a s oficiálními odkazy.</p>
         </div>
         <div className="footer-links">

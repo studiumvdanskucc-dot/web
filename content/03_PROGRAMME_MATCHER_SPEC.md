@@ -57,17 +57,19 @@ Do not store `interestsText` or `goalsText` in analytics, URL parameters or serv
 
 ## Programme contract
 
-Use `data/programmes.schema.json`. The matcher may only return an `id` that exists in `data/programmes.json`.
+Use `content/programmes.schema.json`. The matcher may only return an `id` that exists in `public/data/programmes.json`.
 
 Important fields:
 
 - `id` — stable result identifier;
 - `title`, `description` — English discovery text;
-- `level` — Bachelor or Master;
+- `level` — broad Bachelor or Master grouping;
+- `programmeType` — Bachelor, AP degree, Top-up Bachelor or Master;
 - `topics` — controlled derived categories;
 - `institution`, `city` — context/preferences;
 - `officialProgrammeUrl`, `sourceUrl` — mandatory verification paths;
-- `verificationStatus` — always discovery-only in the current dataset.
+- `verificationStatus` — discovery-only for portal records or official-page-checked for the curated 2027/28 routes.
+- `intake2027` and `availabilitySourceUrl` — visible status and evidence for curated AP/Top-up records.
 
 ## Controlled topic taxonomy
 
@@ -407,4 +409,3 @@ Create at least these deterministic tests:
 ## Definition of safe matching
 
 The matcher is successful when users discover plausible options and understand why they appeared. It is unsafe if a user could reasonably interpret its output as an admission decision, definitive current catalogue, scholarship promise or ranking of university quality.
-

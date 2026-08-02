@@ -9,7 +9,7 @@ const trustFacts = [
     href: "/proc-dansko#skolne",
   },
   {
-    number: "352",
+    number: "360",
     title: "programů v katalogu",
     text: "Anglicky vyučované bakalářské a magisterské možnosti s přímým odkazem na školu.",
     href: "/programy#katalog",
@@ -152,6 +152,14 @@ export default function Home() {
         <div className="about-copy">
           <p className="eyebrow"><span /> O projektu</p>
           <h2>Ahoj, jsem Teri.</h2>
+          <a
+            className="creator-link"
+            href="https://www.tiktok.com/@grafickavdansku"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Sleduj Teri na TikToku <strong>@grafickavdansku</strong> <span aria-hidden="true">↗</span>
+          </a>
           <p className="large-copy">
             Do Dánska jsem se přestěhovala za studiem. Netušila jsem, že mi otevře cestu od AP
             programu až k dvojitému magisterskému titulu, výzkumu, startupům — a také k lidem, kteří

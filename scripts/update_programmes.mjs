@@ -2,7 +2,9 @@
 
 /**
  * Downloads the public Study in Denmark catalogue and creates a compact,
- * implementation-ready list of English-taught Bachelor's and Master's degrees.
+ * implementation-ready list of English-taught degree programmes. The public
+ * catalogue is supplemented with a small, manually verified set of AP and
+ * Top-up programmes for the 2027/28 intake.
  *
  * Usage from the pack root:
  *   node scripts/update_programmes.mjs
@@ -17,7 +19,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const OUT_DIR = path.join(ROOT, "data");
+const OUT_DIR = path.join(ROOT, "public", "data");
 const SOURCE_PAGE = "https://studyindenmark.dk/portal";
 const API = "https://studyindenmark.dk/++api++/@search";
 const REVIEW_DATE = new Date().toISOString().slice(0, 10);
@@ -26,6 +28,233 @@ const DEGREE_LEVELS = {
   "29": "bachelor",
   "30": "master",
 };
+
+const VERIFIED_2027_UNDERGRADUATE = [
+  {
+    id: "via-university-college:campus-herning:branding-and-marketing-management-ap-2027",
+    title: "Branding and Marketing Management — Design, Technology & Business",
+    level: "bachelor",
+    programmeType: "ap-degree",
+    degreeSourceCode: "7445",
+    institution: "VIA University College",
+    institutionSlug: "via-university-college",
+    city: "Herning",
+    campusSlug: "campus-herning",
+    credits: "120 ECTS",
+    duration: "2 years",
+    topics: ["business-management", "communication-media", "design-architecture-arts"],
+    sourceSubjectCodes: [],
+    description: "Dvouletý praktický AP program propojující branding, marketing, retail, komunikaci a lifestyle business. Studium probíhá v angličtině v Herningu.",
+    descriptionSource: "official-programme-page",
+    intakeDates: [],
+    officialProgrammeUrl: "https://en.via.dk/programmes/bachelor/design-technology-and-business-ap-degree",
+    sourceUrl: "https://studyindenmark.dk/portal/via-university-college/campus-herning/branding-and-marketing-management-design",
+    availabilitySourceUrl: "https://en.via.dk/programmes/bachelor/design-and-business-bachelor-top-up/political-reform",
+    lastChecked: REVIEW_DATE,
+    verificationStatus: "official-page-checked",
+    intake2027: {
+      status: "confirmed-2027",
+      label: "Nástup 2027/28 potvrzen",
+      note: "VIA výslovně uvádí, že tento AP program pokračuje i v létě 2027. Přesné datum a deadline ověř před podáním přihlášky.",
+    },
+  },
+  {
+    id: "via-university-college:campus-herning:fashion-design-ap-2027",
+    title: "Fashion Design — Design, Technology & Business",
+    level: "bachelor",
+    programmeType: "ap-degree",
+    degreeSourceCode: "7445",
+    institution: "VIA University College",
+    institutionSlug: "via-university-college",
+    city: "Herning",
+    campusSlug: "campus-herning",
+    credits: "120 ECTS",
+    duration: "2 years",
+    topics: ["design-architecture-arts", "business-management"],
+    sourceSubjectCodes: [],
+    description: "Dvouletý AP program v angličtině zaměřený na módní design, materiály, konstrukci oděvu a práci s lifestyle průmyslem.",
+    descriptionSource: "official-programme-page",
+    intakeDates: [],
+    officialProgrammeUrl: "https://en.via.dk/programmes/bachelor/design-technology-and-business-ap-degree",
+    sourceUrl: "https://studyindenmark.dk/portal/via-university-college/campus-herning/fashion-design-design-technology-business-ap",
+    availabilitySourceUrl: "https://en.via.dk/programmes/bachelor/design-and-business-bachelor-top-up/political-reform",
+    lastChecked: REVIEW_DATE,
+    verificationStatus: "official-page-checked",
+    intake2027: {
+      status: "confirmed-2027",
+      label: "Nástup 2027/28 potvrzen",
+      note: "VIA výslovně uvádí, že tento AP program pokračuje i v létě 2027. Přesné datum a deadline ověř před podáním přihlášky.",
+    },
+  },
+  {
+    id: "via-university-college:campus-horsens:construction-technology-ap-2027",
+    title: "Construction Technology",
+    level: "bachelor",
+    programmeType: "ap-degree",
+    degreeSourceCode: "7445",
+    institution: "VIA University College",
+    institutionSlug: "via-university-college",
+    city: "Horsens",
+    campusSlug: "campus-horsens",
+    credits: "120 ECTS",
+    duration: "2 years",
+    topics: ["engineering-technology", "design-architecture-arts", "sustainability-climate"],
+    sourceSubjectCodes: [],
+    description: "Dvouletý anglický AP program o plánování stavebních projektů, digitálních nástrojích, technické administrativě a udržitelném stavění.",
+    descriptionSource: "official-programme-page",
+    intakeDates: [],
+    officialProgrammeUrl: "https://en.via.dk/programmes/bachelor/construction-technology-ap-degree",
+    sourceUrl: "https://studyindenmark.dk/portal/via-university-college/campus-horsens/construction-technology",
+    availabilitySourceUrl: "https://en.via.dk/programmes/bachelor/construction-technology-ap-degree",
+    lastChecked: REVIEW_DATE,
+    verificationStatus: "official-page-checked",
+    intake2027: {
+      status: "annual-intake",
+      label: "Každoroční srpnový nástup",
+      note: "VIA uvádí srpnový nástup a otevření přihlášek každý rok. Přesné datum pro 2027/28 škola zveřejní později.",
+    },
+  },
+  {
+    id: "business-academy-aarhus:aarhus:multimedia-design-ap-2027",
+    title: "Multimedia Design",
+    level: "bachelor",
+    programmeType: "ap-degree",
+    degreeSourceCode: "7445",
+    institution: "Business Academy Aarhus",
+    institutionSlug: "business-academy-aarhus",
+    city: "Aarhus",
+    campusSlug: "aarhus",
+    credits: "120 ECTS",
+    duration: "2 years",
+    topics: ["design-architecture-arts", "it-data", "communication-media"],
+    sourceSubjectCodes: [],
+    description: "Dvouletý AP program v angličtině zaměřený na UX/UI, web, JavaScript, digitální obsah, e-commerce a profesionální využití AI.",
+    descriptionSource: "official-programme-page",
+    intakeDates: [],
+    officialProgrammeUrl: "https://www.baaa.dk/programmes/multimedia-design/",
+    sourceUrl: "https://www.baaa.dk/programmes/multimedia-design/",
+    availabilitySourceUrl: "https://www.baaa.dk/programmes/multimedia-design/",
+    lastChecked: REVIEW_DATE,
+    verificationStatus: "official-page-checked",
+    intake2027: {
+      status: "annual-intake",
+      label: "Každoroční srpnový nástup",
+      note: "Škola uvádí jeden srpnový nástup každý rok. Konkrétní datum pro 2027/28 zatím nebylo zveřejněno.",
+    },
+  },
+  {
+    id: "via-university-college:campus-herning:branding-and-marketing-management-top-up-2027",
+    title: "Branding and Marketing Management — Design & Business",
+    level: "bachelor",
+    programmeType: "top-up-bachelor",
+    degreeSourceCode: "32",
+    institution: "VIA University College",
+    institutionSlug: "via-university-college",
+    city: "Herning",
+    campusSlug: "campus-herning",
+    credits: "90 ECTS",
+    duration: "1 year 6 months",
+    topics: ["business-management", "communication-media", "design-architecture-arts"],
+    sourceSubjectCodes: [],
+    description: "Anglický Top-up program pro absolventy kompatibilního AP degree. Prohlubuje branding, marketing, komunikaci a práci s fashion a lifestyle značkami.",
+    descriptionSource: "official-programme-page",
+    intakeDates: [],
+    officialProgrammeUrl: "https://en.via.dk/programmes/bachelor/design-and-business-bachelor-top-up",
+    sourceUrl: "https://studyindenmark.dk/portal/via-university-college/campus-herning/branding-and-marketing-management-design-business",
+    availabilitySourceUrl: "https://en.via.dk/programmes/bachelor/design-and-business-bachelor-top-up/political-reform",
+    lastChecked: REVIEW_DATE,
+    verificationStatus: "official-page-checked",
+    intake2027: {
+      status: "confirmed-2027",
+      label: "Poslední nástup: srpen 2027",
+      note: "Vyžaduje kompatibilní AP degree nebo srovnatelné předchozí vzdělání. Současná 1,5letá varianta po tomto nástupu končí.",
+    },
+  },
+  {
+    id: "via-university-college:campus-herning:fashion-design-top-up-2027",
+    title: "Fashion Design — Design & Business",
+    level: "bachelor",
+    programmeType: "top-up-bachelor",
+    degreeSourceCode: "32",
+    institution: "VIA University College",
+    institutionSlug: "via-university-college",
+    city: "Herning",
+    campusSlug: "campus-herning",
+    credits: "90 ECTS",
+    duration: "1 year 6 months",
+    topics: ["design-architecture-arts", "business-management"],
+    sourceSubjectCodes: [],
+    description: "Anglický Top-up program pro absolventy kompatibilního AP degree, kteří chtějí získat profesní bakalářský titul v módním designu.",
+    descriptionSource: "official-programme-page",
+    intakeDates: [],
+    officialProgrammeUrl: "https://en.via.dk/programmes/bachelor/design-and-business-bachelor-top-up",
+    sourceUrl: "https://studyindenmark.dk/portal/via-university-college/campus-herning/fashion-design-design-business-top-up-degree",
+    availabilitySourceUrl: "https://en.via.dk/programmes/bachelor/design-and-business-bachelor-top-up/political-reform",
+    lastChecked: REVIEW_DATE,
+    verificationStatus: "official-page-checked",
+    intake2027: {
+      status: "confirmed-2027",
+      label: "Poslední nástup: srpen 2027",
+      note: "Vyžaduje kompatibilní AP degree nebo srovnatelné předchozí vzdělání. Současná 1,5letá varianta po tomto nástupu končí.",
+    },
+  },
+  {
+    id: "via-university-college:campus-herning:entrepreneurship-and-innovation-top-up-2027",
+    title: "Entrepreneurship and Innovation — Design & Business",
+    level: "bachelor",
+    programmeType: "top-up-bachelor",
+    degreeSourceCode: "32",
+    institution: "VIA University College",
+    institutionSlug: "via-university-college",
+    city: "Herning",
+    campusSlug: "campus-herning",
+    credits: "90 ECTS",
+    duration: "1 year 6 months",
+    topics: ["business-management", "design-architecture-arts"],
+    sourceSubjectCodes: [],
+    description: "Anglický Top-up program pro absolventy kompatibilního AP degree zaměřený na inovace, koncepty, podnikání a rozvoj nových produktů.",
+    descriptionSource: "official-programme-page",
+    intakeDates: [],
+    officialProgrammeUrl: "https://en.via.dk/programmes/bachelor/design-and-business-bachelor-top-up",
+    sourceUrl: "https://studyindenmark.dk/portal/via-university-college/campus-herning/entrepreneurship-and-innovation-design-business",
+    availabilitySourceUrl: "https://en.via.dk/programmes/bachelor/design-and-business-bachelor-top-up/political-reform",
+    lastChecked: REVIEW_DATE,
+    verificationStatus: "official-page-checked",
+    intake2027: {
+      status: "confirmed-2027",
+      label: "Poslední nástup: srpen 2027",
+      note: "Vyžaduje kompatibilní AP degree nebo srovnatelné předchozí vzdělání. Současná 1,5letá varianta po tomto nástupu končí.",
+    },
+  },
+  {
+    id: "business-academy-aarhus:aarhus:digital-concept-development-top-up-2027",
+    title: "Digital Concept Development",
+    level: "bachelor",
+    programmeType: "top-up-bachelor",
+    degreeSourceCode: "32",
+    institution: "Business Academy Aarhus",
+    institutionSlug: "business-academy-aarhus",
+    city: "Aarhus",
+    campusSlug: "aarhus",
+    credits: "90 ECTS",
+    duration: "1 year 6 months",
+    topics: ["design-architecture-arts", "it-data", "communication-media", "business-management"],
+    sourceSubjectCodes: [],
+    description: "Anglický Top-up program pro absolventy kompatibilního AP degree. Zaměřuje se na UX, digitální koncepty, design, technologie a digitální business.",
+    descriptionSource: "official-programme-page",
+    intakeDates: [],
+    officialProgrammeUrl: "https://www.baaa.dk/programmes/digital-concept-development/",
+    sourceUrl: "https://www.baaa.dk/programmes/digital-concept-development/",
+    availabilitySourceUrl: "https://www.baaa.dk/programmes/digital-concept-development/",
+    lastChecked: REVIEW_DATE,
+    verificationStatus: "official-page-checked",
+    intake2027: {
+      status: "confirmed-2027",
+      label: "Poslední nástup: srpen 2027",
+      note: "Škola potvrzuje poslední start v srpnu 2027. Je nutný kompatibilní AP degree nebo srovnatelné předchozí vzdělání.",
+    },
+  },
+];
 
 const INSTITUTIONS = {
   "aalborg-university-aau": "Aalborg University (AAU)",
@@ -185,6 +414,7 @@ function programmeToCsv(programme) {
     programme.id,
     programme.title,
     programme.level,
+    programme.programmeType,
     programme.institution,
     programme.city,
     programme.credits,
@@ -193,6 +423,10 @@ function programmeToCsv(programme) {
     programme.description,
     programme.officialProgrammeUrl,
     programme.sourceUrl,
+    programme.intake2027?.status,
+    programme.intake2027?.label,
+    programme.intake2027?.note,
+    programme.availabilitySourceUrl,
     programme.lastChecked,
   ].map(csvCell).join(",");
 }
@@ -251,6 +485,7 @@ function transform(item) {
     id: `${institutionSlug}:${campusSlug || "campus"}:${sourceId}`,
     title: clean(item.title),
     level,
+    programmeType: level,
     degreeSourceCode: String(item.degree),
     institution,
     institutionSlug,
@@ -278,9 +513,10 @@ function transform(item) {
 
 async function main() {
   const raw = await fetchCatalogue();
-  const programmes = (raw.items || [])
+  const discoveredProgrammes = (raw.items || [])
     .filter((item) => DEGREE_LEVELS[String(item.degree)])
-    .map(transform)
+    .map(transform);
+  const programmes = [...discoveredProgrammes, ...VERIFIED_2027_UNDERGRADUATE]
     .sort((a, b) => a.title.localeCompare(b.title, "en"));
 
   const counts = programmes.reduce(
@@ -291,16 +527,27 @@ async function main() {
     { bachelor: 0, master: 0 },
   );
 
+  const typeCounts = programmes.reduce(
+    (acc, programme) => {
+      acc[programme.programmeType] += 1;
+      return acc;
+    },
+    { bachelor: 0, "ap-degree": 0, "top-up-bachelor": 0, master: 0 },
+  );
+
   const payload = {
     meta: {
-      title: "English-taught Bachelor's and Master's programmes in Denmark",
+      title: "English-taught degree programmes in Denmark",
       generatedAt: new Date().toISOString(),
       source: SOURCE_PAGE,
       sourceApi: API,
       sourceCatalogueTotal: raw.items_total ?? raw.items?.length ?? null,
       includedTotal: programmes.length,
       counts,
+      typeCounts,
       includedDegreeCodes: Object.keys(DEGREE_LEVELS),
+      curatedDegreeCodes: ["7445", "32"],
+      curated2027Total: VERIFIED_2027_UNDERGRADUATE.length,
       language: "English",
       warning:
         "Discovery data only. The source catalogue is being revised. Verify programme availability, intake, deadlines, requirements and tuition on the institution's official programme page before publishing or advising a student.",
@@ -319,6 +566,7 @@ async function main() {
     "id",
     "title",
     "level",
+    "programmeType",
     "institution",
     "city",
     "credits",
@@ -327,6 +575,10 @@ async function main() {
     "description",
     "officialProgrammeUrl",
     "sourceUrl",
+    "intake2027Status",
+    "intake2027Label",
+    "intake2027Note",
+    "availabilitySourceUrl",
     "lastChecked",
   ].map(csvCell).join(",");
   const csv = `${[csvHeader, ...programmes.map(programmeToCsv)].join("\n")}\n`;
@@ -338,7 +590,7 @@ async function main() {
   ]);
 
   console.log(
-    `Saved ${programmes.length} programmes (${counts.bachelor} Bachelor's, ${counts.master} Master's) to data/programmes.json and data/programmes.csv`,
+    `Saved ${programmes.length} programmes (${typeCounts.bachelor} Bachelor's, ${typeCounts["ap-degree"]} AP, ${typeCounts["top-up-bachelor"]} Top-up, ${typeCounts.master} Master's) to public/data/programmes.json and public/data/programmes.csv`,
   );
 }
 

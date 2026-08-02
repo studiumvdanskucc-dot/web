@@ -7,7 +7,7 @@
   "properties": {
     "meta": {
       "type": "object",
-      "required": ["generatedAt", "source", "includedTotal", "counts", "warning"],
+      "required": ["generatedAt", "source", "includedTotal", "counts", "typeCounts", "warning"],
       "properties": {
         "generatedAt": { "type": "string", "format": "date-time" },
         "source": { "type": "string", "format": "uri" },
@@ -17,6 +17,16 @@
           "required": ["bachelor", "master"],
           "properties": {
             "bachelor": { "type": "integer", "minimum": 0 },
+            "master": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "typeCounts": {
+          "type": "object",
+          "required": ["bachelor", "ap-degree", "top-up-bachelor", "master"],
+          "properties": {
+            "bachelor": { "type": "integer", "minimum": 0 },
+            "ap-degree": { "type": "integer", "minimum": 0 },
+            "top-up-bachelor": { "type": "integer", "minimum": 0 },
             "master": { "type": "integer", "minimum": 0 }
           }
         },
@@ -31,6 +41,7 @@
           "id",
           "title",
           "level",
+          "programmeType",
           "institution",
           "city",
           "topics",
@@ -44,6 +55,7 @@
           "id": { "type": "string", "minLength": 1 },
           "title": { "type": "string", "minLength": 1 },
           "level": { "enum": ["bachelor", "master"] },
+          "programmeType": { "enum": ["bachelor", "ap-degree", "top-up-bachelor", "master"] },
           "institution": { "type": "string", "minLength": 1 },
           "city": { "type": "string", "minLength": 1 },
           "credits": { "type": ["string", "null"] },
@@ -67,8 +79,18 @@
           },
           "officialProgrammeUrl": { "type": "string", "format": "uri" },
           "sourceUrl": { "type": "string", "format": "uri" },
+          "availabilitySourceUrl": { "type": "string", "format": "uri" },
+          "intake2027": {
+            "type": "object",
+            "required": ["status", "label", "note"],
+            "properties": {
+              "status": { "enum": ["confirmed-2027", "annual-intake"] },
+              "label": { "type": "string", "minLength": 1 },
+              "note": { "type": "string", "minLength": 1 }
+            }
+          },
           "lastChecked": { "type": "string", "format": "date" },
-          "verificationStatus": { "const": "catalogue-discovery-only" }
+          "verificationStatus": { "enum": ["catalogue-discovery-only", "official-page-checked"] }
         }
       }
     }

@@ -143,6 +143,8 @@ Eyebrow: **Od studentky pro budoucí studenty**
 
 # Ahoj, jsem Teri.
 
+TikTok: **[@grafickavdansku](https://www.tiktok.com/@grafickavdansku)**
+
 Do Dánska jsem se přestěhovala za studiem. Netušila jsem, že mi otevře cestu od AP programu až k dvojitému magisterskému titulu, výzkumu, startupům — a také k lidem, kteří změnili můj život.
 
 Začala jsem programem Multimedia Design na IBA Kolding, pokračovala profesním bakalářským studiem Branding & Marketing na VIA University College a navázala magisterským studiem na Aalborg University. V roce 2026 jsem dokončila také mezinárodní dvojitý magisterský program zaměřený na Innovation Management a Management Science & Engineering.
